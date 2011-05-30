@@ -1,5 +1,5 @@
 @font-face {
-  font-family: Goudy;
+  font-family: 'Goudy';
   src: url('../fonts/OFLGoudyStMTT.ttf');
 }
 
@@ -59,6 +59,14 @@ div.slide {
   border-bottom-left-radius: 20px;
   -moz-border-radius-bottomleft: 20px;
   -webkit-border-bottom-left-radius: 20px;
+}
+
+div.slide:first-child {
+  background: url('../img/00.png');
+}
+
+div.slide.last {
+  background: url('../img/00-fin.png');
 }
 
 div.slide p {
@@ -170,6 +178,10 @@ li {
   font-size: 63px;
   margin-top:100px;
   margin-bottom:100px;
+}
+
+.slide:first-child header:only-child h1 { /* Header on first slide shouldn't overlap with the machinalis logo */
+  vertical-align: top;
 }
 
 .sidebar {
