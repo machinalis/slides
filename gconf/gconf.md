@@ -289,11 +289,11 @@ Mas detalles de la API en <http://developer.gnome.org/gconf/stable/>
 En genral no hace falta/no hay que usarlo. Pero los siguientes son
 útiles:
 
-!c
-GConfEngine *gconf_engine_get_for_address   (const gchar *address,
-                                             GError **err);
-GConfEngine *gconf_engine_get_for_addresses (GSList *addresses,
-                                             GError **err);
+    !c
+    GConfEngine *gconf_engine_get_for_address   (const gchar *address,
+                                                 GError **err);
+    GConfEngine *gconf_engine_get_for_addresses (GSList *addresses,
+                                                 GError **err);
 
 ----
 # Recomendaciones
