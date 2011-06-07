@@ -1,0 +1,14 @@
+GCC=gcc
+CC=gcc
+CFLAGS=-Wall
+
+all: astatic
+
+astatic: a.o good.o
+	$(GCC) -o $@ $^
+
+.PHONY: clean all
+
+clean:
+	rm -f astatic *.o
+

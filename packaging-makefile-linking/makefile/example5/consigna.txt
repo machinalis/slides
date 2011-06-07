@@ -1,0 +1,8 @@
+Tomar el makefile de example4 resuelto (el propio o de la solucion) y
+cambiarlo para que incorpore:
+-.PHONY segun corresponda
+-usar almenos una vez "$@", "$^" y/o "$<" (demostrado en Makefile.1)
+-usar variables implicitas (demostrado en Makefile.1)
+-una regla con matching (demostrado en Makefile.2)
+-una regla implicita (demostrado en Makefile.3)
+
