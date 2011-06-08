@@ -1,0 +1,936 @@
+% $Header$
+\documentclass[xetex]{beamer}
+%\usepackage[utf8]{inputenc} % Este paquete permite poner acentos y eñes usando codificación utf-8
+\usepackage[spanish]{babel}
+\usepackage{listings}
+\lstset{language=C,basicstyle=\small \ttfamily,numbers=left}
+
+\usepackage{xunicode} %Unicode extras!
+\usepackage{xltxtra}  %Fixes
+\usepackage{fontspec} 
+\defaultfontfeatures{Mapping=tex-text} 
+\setmainfont{OFL Sorts Mill Goudy}
+\setmonofont{Inconsolata}
+\setsansfont{OFL Sorts Mill Goudy}
+\setromanfont{OFL Sorts Mill Goudy}
+ 
+%template
+\setbeamertemplate{navigation symbols}{} 
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{background}}
+\setbeamercolor{normal text}{fg=white} 
+\setbeamercolor{alerted text}{fg=white} 
+\setbeamercolor{example text}{fg=white} 
+\setbeamercolor{structure}{fg=white} 
+
+
+\title{\includegraphics[width=6em]{archer.pdf}\\GDB}
+\author{Felipe Manzano\\ felipe.andres.manzano@gmail.com}
+\institute{Machinalis}
+\date{06/06/2011}
+\subject{Curso en Intel}
+
+\begin{document}
+{\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{machinalis_a}}
+\begin{frame}{}\end{frame}
+}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Temas - GDB}
+\tableofcontents
+\end{frame}
+
+\section{Introducción}
+\begin{frame}[fragile]{Introducciósen - historia}
+\begin{quotation}
+El propósito de un depurador como GDB es permitir al usuario ver lo que
+está ocurriendo ‘‘dentro’’  de  otro  programa  mientras  que  se  está
+ejecutando — o lo que estaba haciendo en el momento que falló.
+\end{quotation}
+{\hglue 20em del 'man gdb'}
+\begin{itemize}
+\item GDB fue inicialmente escrito por Richard Stallman en 1986 
+\item Es software libre con licencia GNU
+\item Actualmente está en la versión 7.2.x
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Introducción - características}
+ GDB puede hacer cuatro tipos de magia para capturar errores en el acto:
+\begin{itemize}
+\item Ejecutar un programa desde cero, especificando  cualquier  cosa  que  pueda
+afectar a su comportamiento
+\item Detener la ejecución de un programa al cumplirse ciertas condiciones
+especificadas
+\item Examinar qué ha pasado en un crash post-mortem
+\item Cambiar cualquier detalle de la ejecución de un programa, memoria, registros e incluso ejecutar funciones del programa
+\item Puede depurar C, C++, y código nativo entre otros.
+\item Robusto y automatizable
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Introducción - Entrando al gdb}
+\begin{itemize}
+\item GDB se ejecuta simplemente con el comando \verb=gdb=
+\item Las formas más usuales de llamar al gdb son:
+\begin{itemize}
+\item \verb=gdb -exec programa=
+\item \verb=gdb -exec programa -core core= donde \verb=core= es un file con un {\it coredump}
+\item \verb=gdb -exec programa -core 1234= donde \verb=1234= es el PID
+\item \verb=gdb -silent= no imprime la versión ni la licencia
+\item \verb=gdb -help= imprime la ayuda para la línea de comandos
+\end{itemize}
+\item otra interesante es \verb=-x file.txt= donde se le pasa una lista de comandos internos que \verb=gdb= ejecutará al principio.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{Introducción - Una vez adentro del gdb}
+\begin{itemize}
+\item Una vez adentro GDB presenta un {\it shell} con todos los beneficios de \verb=GNU readline=
+\item Usar y abusar del \verb=CTRL+R=(o \verb=ESC-?=) y \verb=TAB=
+\item Se sale con \verb=quit= o \verb=CTRL-D= 
+\item Se puede llamar al shell directamente desde gdb así: 
+\begin{verbatim}
+(gdb) shell ls -al
+\end{verbatim}
+\item Es fácil recompilar sin salir del gdb:
+\begin{verbatim}
+(gdb) make makeargs
+\end{verbatim}
+es equivalente a 
+\begin{verbatim}
+(gdb) shell make makeargs
+\end{verbatim}
+\item Tiene un \verb=help= y un \verb=apropos=
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Introducción - Compilar para depuración}
+\begin{itemize}
+  \item La información de depuración se incluye con \verb=-g= o \verb=-ggdb=
+\begin{verbatim}
+$ gcc -ggdb -o test.dbg test.c
+\end{verbatim}
+  \item Para borrar esta información antes de un release:
+\begin{verbatim}
+$ cp test test.dbg
+$ strip test
+\end{verbatim}
+  \item Nos quedamos con una copia de la versión que contiene la información de depuración
+  \item Los {\it coredump} generados con la versión de release podrán usarse con la versión de depuración
+  \item Para analizar bugs privados es mejor usar una versión sin optimizaciones:
+\begin{verbatim}
+$ gcc -ggdb -O0 -o test.dbg test.c
+\end{verbatim}
+  \item Para incluir información sobre los macros usar algo así:
+\begin{verbatim}
+$ gcc -gdwarf-2 -g3 sample.c -o sample. 
+\end{verbatim}
+\end{itemize}
+
+\end{frame}
+
+\section{Primera sesión de gdb}
+\begin{frame}[fragile]{Primera sesión de gdb - Un ejemplito (dataentry)}
+\begin{lstlisting}
+#include<stdio.h>
+#include<assert.h>
+int
+main (int argc, char *argv[])
+{
+  int edad;
+  char nombre[10];
+  printf ("Ingrese su nombre: ");
+  scanf ("%100s", nombre);
+  printf ("Ingrese su edad: ");
+  scanf ("%d", &edad);
+  printf ("Hola %s, ud tiene %d pirulos!!\n",\
+                                nombre, edad);
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Primera sesión de gdb - comandos útiles (1/2)}
+\begin{itemize}
+\item Se compila así:
+\begin{verbatim}
+$ gcc -O0 -g dataentry.c -o dataentry
+\end{verbatim}
+
+\item El depurador se ejecuta así: 
+\begin{verbatim}
+$ gdb dataentry
+\end{verbatim}
+\item Comandos útiles: 
+    \begin{itemize}
+        \item \verb=start=
+        \item \verb=print edad=
+        \item \verb=print nombre=
+        \item \verb=next=
+        \item \verb=shell man scanf=
+        \item \verb=quit= 
+    \end{itemize}
+\item Maximiliano(18) y Segismundo(65) han reportado problemas... debug! 
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Primera sesión de gdb - más comandos útiles}
+\begin{itemize}
+\item GDB usa expresiones C-like para hacer referencia a los datos
+\item El comando \verb=print EXPR= espera cosas como:
+\begin{itemize}
+\item \verb=print (int) argc=
+\item \verb=print (char*) argv[0]=
+\item \verb=print *(struct mi_estructura*) puntero=
+\end{itemize}
+\item Para inspeccionar memoria se usa el comando \verb=x/= así:
+\begin{itemize}
+\item \verb=x/x ADDR= imprime un entero apuntado por \verb=ADDR=
+\item \verb=x/s ADDR= imprime un string que empieza en \verb=ADDR=
+\item \verb=x/c ADDR= imprime un byte apuntado por \verb=ADDR=
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Primera sesión de gdb - gdb shell}
+\begin{lstlisting}
+#include <stdio.h>
+struct mi_estructura{
+    int entero;
+    float flotante;
+    char cadena[20];
+};
+int main(){
+    struct mi_estructura datos;
+    memcpy(&datos, "\x39\x30\x00\x00\xcd\xcc\x8c\x3f"
+                   "\x48\x6f\x6c\x61\x2c\x20\x6d\x75"
+                   "\x6e\x64\x6f\x00",28);
+
+    if (datos.entero + datos.flotante > 0.2)
+	    printf("datos.cadena: %s\n",
+	        datos.cadena);
+}
+\end{lstlisting}
+\end{frame}
+\begin{frame}[fragile]{Primera sesión de gdb - gdb shell}
+\begin{itemize}
+\item Le línea de comando de gdb esta paginada.
+\item Si un comando imprime información de mas de una pagina se de tiene la ejecución
+\item El tamaño de la página se define así:
+\begin{verbatim}
+(gdb) set height 100
+\end{verbatim}
+\item Toda la salida puede guardarse en un archivo de {\it log} con:
+\begin{verbatim}
+(gdb) set log on /tmp/archivo.log
+\end{verbatim}
+\item para dejar de {\it loggear}
+\begin{verbatim}
+(gdb) set log off
+\end{verbatim}
+\item El código fuente se puede listar con el comando \verb=list=
+\item \verb=ENTER= a secas repite el comando anterior
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Primera sesión de gdb - Expresiones automaticas}
+\begin{itemize}
+\item Se puede {\it seguir} el valor de una variable o expresión con el comando \verb-display-
+\item \verb=display /fmt EXPR= agrega una expresión ala lista de expresiones automáticas
+\item \verb=undisplay NUM= remueve cierta expresión de la lista
+\item \verb=info display= muestra la lista de expresiones automáticas
+\item Ejemplos:
+\begin{itemize}
+\item \verb=display /s miString=
+\item \verb=display /d miEntero=
+\item \verb=display *(struct MiStruct*) miStruct=
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\section{Ejecutando programas desde cero}
+
+\begin{frame}[fragile]{Ejecutando programas en GDB}
+\begin{itemize}
+\item Para iniciar la depuración de un programa se usan: 
+\begin{itemize}
+\item \verb=run= ejecuta desde el comienzo
+\item \verb=start= idem pero se detiene en \verb=main=
+\end{itemize}
+\item La traza de ejecución de un programa depende de la información proporcionada por el entorno 
+\item Todo esto puede controlarse desde gdb:
+\begin{itemize}
+\item Los {\it argumentos} de la línea de comando
+\item Las {\it variables de entorno} {\small ver \verb=env=}
+\item El {\it directorio de trabajo}
+\item La {\it salida y entrada estándard}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Los argumentos}
+\begin{itemize}
+\item Los argumentos se pueden asignar previamente así:
+\begin{verbatim}
+(gdb) set args arg1 arg2 arg3
+(gdb) run
+\end{verbatim}
+
+\item o se pueden pasar normalmente a \verb=run= o \verb=start=
+\begin{verbatim}
+(gdb)run arg1 arg2 arg3
+\end{verbatim}
+(si no se especifica nada se usa lo seteado anteriormente)
+\item Para verlos: \verb=show args=
+\item Si se puede son procesados por el {\tt shell}. Es decir {\tt *} se reemplazará por los
+nombres de archivo del directorio actual.
+\end{itemize}
+\end{frame}
+
+\section{Controlando el entorno}
+
+\begin{frame}[fragile]{Los argumentos - Ejemplito}
+\begin{lstlisting}
+int
+main (int argc, char *argv[])
+{
+  int i;
+  /* Esperamos al menos 1 argumento */
+  assert (argc==2);
+  /* En el primer argumento esperamos un numero */
+  sscanf(argv[1],"%u",(unsigned int*)&i);
+  /* un numero menor que 100*/
+  assert(i<100 && i>=0);
+  printf("El parametro %d esta entre 0 y 100\n",i);
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Variables de entorno y directorio}
+\begin{itemize}
+\item Las variables de entorno se setean así
+\begin{verbatim}
+(gdb) set environment VARIABLE="Este es el valor"
+\end{verbatim}
+\item Se pueden revisar así:
+\begin{verbatim}
+(gdb) show environment VARIABLE
+\end{verbatim}
+\item Y borrar así:
+\begin{verbatim}
+(gdb) unset environment VARIABLE
+\end{verbatim}
+\item El directorio actual o de trabajo se setea con \verb=cd= y se revisa con \verb=pwd= directamente desde el gdb
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Variables de entorno y directorio - Ejemplito}
+\begin{lstlisting}
+int
+main (int argc, char *argv[])
+{
+  char cwd[1024];
+  char * variable;
+  variable = getenv("VARIABLE");
+  /* La VARIABLE de entorno debe existir */
+  assert (variable != NULL);
+  printf("VARIABLE=%s\n",variable);
+  /* El directorio actual debe ser /etc */
+  assert(getcwd(cwd, sizeof(cwd)) != NULL);
+  assert(strcmp("/etc",cwd)==0);
+  printf("El directorio actual es %s\n",cwd);
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]{Entrada y salida estándard }
+\begin{itemize}
+\item La entrada y salida estándard se puede direccionar al igual que en bash
+\item Funciona con el con \verb=run= y \verb=start= así:
+\begin{verbatim}
+(gdb) run < archivo.in >archivo.out
+\end{verbatim}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{Entrada y salida estándard - Ejemplito}
+\begin{lstlisting}
+int main (int argc, char *argv[]) 
+{
+  FILE *f;
+  char bufferA[1024];
+  char bufferB[1024];  
+  char cwd[1024];
+  /* El directorio actual debe ser /etc */
+  assert (getcwd (cwd, sizeof (cwd)) != NULL);
+  assert (strcmp ("/etc", cwd) == 0);
+  printf ("El directorio actual es %s\n", cwd);
+  f = fopen("passwd","r");
+  fread(bufferA,1,1024,f);
+  fread(bufferB,1,1024,stdin);
+  assert(memcmp(bufferA,bufferB,1024)==0);
+  printf("stdin es identico a /etc/passwd\n");  
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+\section{Depurando programas en ejecución}
+
+\begin{frame}[fragile]{Depurando programas en ejecución}
+\begin{itemize}
+\item Se usa \verb=attach=, \verb=dettach= y \verb=kill= para depurar un programa en ejecución
+\item Inmediatamente después de un \verb=attach= el programa queda suspendido
+\item El programa siendo depurado puede interrumpirse con \verb=CTRL+C= y reanudarse con \verb=continue=
+\item La memoria o variables del programa se inspeccionan con \verb=print= o \verb=x= así:
+\begin{itemize}
+\item \verb=(gdb) print flag=
+\item \verb=(gdb) x/s tema=
+\end{itemize}
+\item Para modificar variables se puede usar \verb=set= o incluso \verb=print= así:
+\begin{itemize}
+\item \verb#(gdb) set flag=0#
+\item \verb#(gdb) p strcpy(tema,"Me puedo debugear")#
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Depurando programas en ejecución - Ejemplito}
+\begin{lstlisting}
+int
+main (int argc, char *argv[])
+{
+  char tema[]="Me puedo programar";
+  char banda[]="Virus";
+  int flag=1;
+  printf("Hola mi pid es %d\n", getpid());
+  while(flag);
+
+  printf("Mi tema preferido es '%s' de la banda"\
+                            "'%s'.\n",tema,banda);
+  printf("Link http://www.youtube.com/"\
+                        "watch?v=r23-Y6ElWV4.\n");
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+\section{Depurando programas con hilos o forks}
+
+\begin{frame}[fragile]{Depurando programas con hilos}
+GDB provee algunas facilidades para depurar hilos
+\begin{itemize}
+\item Notifica automáticamente la creación de hilos
+\item \verb=info threads= lista los hilos existentes
+\item En cada momento se está examinando el contexto de un hilo determinado
+\item \verb=thread NUM= cambia el hilo actual
+\item \verb=thread apply all= ejecuta un comando GDB en todos los hilos. Por ej.
+\begin{verbatim}
+(gdb) thread apply all p flag
+(gdb) thread apply all p flag=0
+\end{verbatim}
+\item Para ejecutar un solo hilo por vez usar algo así:
+\begin{verbatim}
+(gdb) set scheduler-locking on
+\end{verbatim}
+\item Se puede consultar con \verb=show scheduler-locking=
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Depurando programas con hilos - Ejemplito}
+\begin{lstlisting}
+void * inc (void *ptr){
+  int flag = 1;
+  /* Loop loco */
+  while (flag==1)
+    ++(*(int *) ptr);
+  printf ("Salio despues de %d iteraciones\n",*(int *) ptr);
+  return NULL;
+}
+int main (int argc, char * argv[]){
+  pthread_t thread[2];
+  int x = 0, y = 0;
+  pthread_create (&thread[0], NULL, inc, &x);
+  pthread_create (&thread[1], NULL, inc, &y);
+  pthread_join(thread[1], NULL);
+  pthread_join(thread[0], NULL);
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Depurando programas con forks}
+Para controlar el comportamiento de gdb en tiempo de \verb=fork= se usa
+\verb=follow-fork-mode=
+\begin{itemize}
+\item \verb#set follow-fork-mode child# instruye al gdb a {\it seguir} siempre al proceso hijo
+\item \verb#set follow-fork-mode parent# instruye al gdb a {\it quedarse} en el proceso hijo
+\item \verb#show follow-fork-mode# muestra el estado actual de la variable
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Depurando programas con forks - Ejemplito}
+\begin{lstlisting}
+#include <sys/types.h>
+#include <unistd.h>
+#include <stdio.h>
+int
+main (int argc, char *argv[])
+{
+  pid_t pid = fork ();
+  if (!pid)
+      printf ("Proceso hijo: PID %d\n", getpid());
+  else
+      printf ("Proceso padre: PID %d\n", getpid());
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+\section{Depurando programas con señales}
+
+\begin{frame}[fragile]{Depurando programas con señales}
+\begin{itemize}
+\item Las {\it signals} son eventos asíncronos provistos por el sistema operativo. (ver \verb=man 7 signal=)
+\item \verb=info signals = imprime la lista de todas las señales y cómo gdb esta configurado para manejarlas
+\item Cada señal puede ser interpretada por gdb de diferentes maneras, este comportamiento se configura con:
+\begin{verbatim}
+(gdb)handle SIGNAL KEYWORD
+\end{verbatim}
+... donde \verb=KEYWORD= es uno de:
+\begin{itemize}
+\item \verb=stop= y \verb=nostop= detiene o no la ejecución
+\item \verb=print= y \verb=noprint= imprime o no un mensaje informativo
+\item \verb=pass= y \verb=nopass= pasa o nopasa la señal al programa (es decir si ejecuta o no el manejador asociado en el programa)
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Depurando programas con Señales - Ejemplito}
+\begin{lstlisting}
+int cont = 0; int flag = 1;
+void handler (int sig) {
+  signal (SIGALRM, SIG_IGN);
+  if(flag){
+    printf ("SIGALRM exiting! :(");
+    exit(1);
+  }
+  alarm (2);
+  signal (SIGALRM, handler);
+}
+void main (int argc, char *argv[]){
+  signal (SIGALRM, handler);
+  alarm (2);
+  while (cont<500){
+      sleep(1);
+      cont++;
+  }
+  printf("Ganaste!\n");
+}
+\end{lstlisting}
+\end{frame}
+
+
+
+\section{Interrumpiendo la ejecución}
+
+\begin{frame}[fragile]{Interrumpiendo la ejecución - Motivación}
+\begin{lstlisting}
+int readSUM(istream& in){
+  char buffer[256];
+  int i, co;
+  assert(in.read (buffer,256).good());
+  for(i=0,co=0;i<in.gcount();i++)
+    co+=buffer[i];
+  return co;
+}
+int main (int argc, char* argv[]) {
+  int checksum;
+  checksum = readSUM(cin);
+  assert(checksum > 1000 && checksum < 16640);
+  cout << "El checksum es: " << checksum <<endl;
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]{Interrumpiendo la ejecución}
+\begin{itemize}
+\item El propósito principal de usar un depurador es poder detener el procesamiento en puntos de interés (o analizar cuando se está en algún crash/deadlock)
+\item GDB provee tres formas de detener la ejecución en lugares interesantes:
+\begin{itemize}
+\item {\it breakpoints}, detienen el programa en un lugar o punto del código
+\item {\it wathchpoints}, detienen el programa cuando cierto dato se accede o modifica
+\item {\it catchpoints}, detiene el programa cuando se da una excepción de C++ o se carga un módulo o biblioteca
+\end{itemize}
+\item gdb asigna un número a cada {\it breakpoint}, {\it watchpoint} y {\it catchpoint} que se crea
+\item ese número se usa como referencia desde otros comandos, sirve para la habilitación, deshabilitación y borrado de los mismos
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Interrumpiendo la ejecución - Breakpoins}
+\begin{itemize}
+\item Los {\it breakpoints} se pueden setear de muchas maneras.
+\begin{itemize}
+\item \verb=break nombre_de_funcion= pone un breakpoint al comienzo de una función 
+\item \verb=break archivo.c:línea= pone un breakpoint en el número de línea especificado 
+\item \verb=break= a secas pone un breakpoint en la posición actual
+\item \verb=rbreak regExp= pone un breakpoint en todas la funciones que cumplan con la expresión regular regExp. Ej \verb=rbreak .*alloc.*=
+
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Interrumpiendo la ejecución - Watchpoints}
+\begin{itemize}
+\item Los {\it watchpoints} monitorean el estado de ciertas partes de la memoria
+\begin{itemize}
+\item \verb=watch EXPR= detiene la ejecución cuando \verb=EXPR= es modificada
+\item \verb=rwatch EXPR= detiene la ejecución simplemente cuando \verb=EXPR= es leída
+\item \verb=awatch EXPR= detiene la ejecución cuando \verb=EXPR= es modificada y/o leída
+\end{itemize}
+\item \verb=delete=, \verb=disable= y \verb=enable= hacen lo esperado
+\item \verb=info watchpoints= muestra la lista de watchpoints
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Interrumpiendo la ejecución - Catchpoints}
+\begin{itemize}
+\item Se pueden utilizar los {\it catchpoints} para detener la ejecución en ciertos eventos del programa. Se usan así:
+\begin{verbatim} 
+(gdb) catch EVENT
+\end{verbatim} 
+donde \verb=EVENT= es alguno de los siguientes eventos:
+\begin{itemize}
+\item \verb=throw= cuando se lanza una excepción de C++
+\item \verb=catch= cuando se maneja una excepción de C++
+\item \verb=load LIBNAME= cuando se carga \verb=LIBNAME=  a la memoria del proceso
+\item \verb=unload LIBNAME=  cuando se descarga \verb=LIBNAME= de la memoria del proceso
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Interrumpiendo la ejecución - Administración}
+\begin{itemize}
+
+\item \verb=delete NBREAK= borra el breakpoint
+\item \verb=disable NBREAK= lo deshabilita temporalmente
+\item \verb=enable NBREAK=  lo vuelve a habilitar 
+\item \verb=ignore NBREAK NUM= ignorara \verb=NUM= veces el breakpoint \verb=NBREAK=  
+\item \verb=info breakpoints= (o \verb=watchpoints=, o \verb=catchpoints=) muestra el estado de los breakpoints (o watchpoints, o catchpoints)
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Interrumpiendo la ejecución - Ejemplito}
+\begin{lstlisting}
+class NewDelete{
+    char local[256];
+    char *c;
+    size_t len;
+    int error;
+public:
+    NewDelete (size_t size) {
+       try{
+            c = new char[size];
+            len = size;
+       }catch (...) {
+            cout << "No hay suficiente memoria" <<endl;
+            globalerror = error = 1;
+       }
+       error = 0;
+    }
+
+    ~NewDelete(){ delete c; }
+};
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Interrumpiendo la ejecución - Ejemplito (..cont)}
+\begin{lstlisting}
+void
+newdelete(size_t size){
+NewDelete nd(size);
+}
+int main () {
+  int checksum;
+  checksum = readSUM(cin);
+  newdelete(checksum);
+  cout << "El checksum es: " << checksum <<endl;
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]{Interrumpiendo la ejecución - Efectos secundarios}
+\begin{itemize}
+
+\item Se puede asignar condiciones a casi cualquier cosa de esta manera:
+\begin{verbatim}
+(gdb) condition NBREAK flag==1
+\end{verbatim}
+
+\item y se remueven así:
+\begin{verbatim}
+(gdb) condition NBREAK
+\end{verbatim}
+
+\item Tambien se puede ejecutar una lista de comandos en cada breakpoint!
+\begin{verbatim}
+(gdb) command NBREAK
+print "BREAKPOINT!"
+continue
+end
+\end{verbatim}
+
+\item y se quita asignándole la lista vacía de comandos:
+\begin{verbatim}
+(gdb) command NBREAK
+end
+\end{verbatim}
+
+\end{itemize}
+\end{frame}
+\section{Continuando la ejecución}
+\begin{frame}[fragile]{Continuando la ejecución}
+\begin{itemize}
+\item La ejecución puede reanudarse con \verb=continue=
+\item \verb=next= ejecuta la próxima línea
+\item \verb=stepi= ejecuta la próxima línea metiéndose dentro de las funciones
+\item \verb=finnish= ejecuta hasta salir de la función actual
+\item \verb=until = ejecuta hasta pasar número de línea especificado. Optimo para salir de bucles!
+\item \verb=jump NUMLINEA= continua ejecutando desde la linea de codigo especificada
+\item \verb=return VALOR= ignora el comportamiento restante de la funcion actual y retorna \verb=VALOR= a la llamante
+\end{itemize}
+\end{frame}
+
+\section{Analizando la pila}
+
+\begin{frame}[fragile]{Analizando la pila}
+\begin{itemize}
+\item OK, el programa se detuvo. Pero como llegué ahí?
+\item Cada vez que se realiza una llamada a procedimiento se {\it apila} información
+para poder retornar del mismo
+\item Esto se denomina marco de activación o {\it stack frame}
+\item GDB asigna un número a cada marco de activación anidado y se listan así:
+\begin{verbatim}
+(gdb) backtrace
+\end{verbatim}
+\item Sólo pueden accederse a las variables locales del marco actual
+\item Se puede navegar o cambiar de marco con:
+\begin{verbatim}
+(gdb) frame N
+\end{verbatim}
+\item O iterativamente usando \verb=up= y \verb=down=
+\item \verb=info args= e \verb=info locals= muestran los argumentos y las variables locales del marco actual 
+\item \verb=info catch= lista los manejadores de excepciones activos
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Analizando la pila - Ejemplito}
+\begin{lstlisting}
+#include <stdio.h>
+int fib(int n)
+{
+if(n==1 || n==0)
+    return n;
+else
+    return fib(n-1)+fib(n-2);
+}
+
+int main()
+{
+    printf("Fibonacci(%d)= %d\n\n ",10,fib(10));
+    return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+
+\section{Comandos definidos por el usuario}
+\begin{frame}[fragile]{Comandos definidos por el usuario}
+\begin{itemize}
+\item GDB permite definir comandos personalizados
+\item Son una lista de comandos comunes de gdb empaquetados y con nombre
+\item Pueden tomar argumentos
+\item Tienen esta pinta
+\begin{verbatim}
+define suma
+print $arg0 $arg1 $arg2
+end
+\end{verbatim}
+\item y se usan asi:
+\begin{verbatim}
+(gdb) suma 1 2 3
+$1 = 6
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Comandos definidos por el usuario}
+\begin{itemize}
+\item Tiene \verb=if=, \verb=while= y variables auxiliares como \verb=$i= y \verb=$aux=
+\begin{verbatim}
+(gdb) set $i=0
+(gdb) while $i<100
+set $i=$i+1
+if $i%3==0
+  printf "%d es multiple de 3\n", $i
+  end
+end
+\end{verbatim}
+\item Los {\it scopes} se cierran con \verb=end=
+\item Ideales para crear una biblioteca de funciones de conveniencia en \verb=.gdbinit= 
+\item Probar esto y luego depurar un programa (usando \verb=start=):
+\begin{verbatim}
+define hook-start
+printf "STAAAAART!"
+end
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\section{Crashes y coredumps}
+\begin{frame}[fragile]{Crashes y coredumps}
+\begin{quotation}
+In computing, a core dump, more properly a memory dump or storage dump,
+consists of the recorded state of the working memory of a computer
+program at a specific time, generally when the program has terminated
+abnormally 
+\end{quotation}
+
+\begin{itemize}
+\item la generación o no de \verb=coredumps= se controla con el comando \verb=ulimit=
+\begin{verbatim}
+$ ulimit -c unlimited
+\end{verbatim}
+\item tambien ver \verb=man core= para información detallada
+\item algunas senales generan por defecto coredumps
+\begin{itemize}
+\item Program terminated with signal 4, Illegal instruction.
+\item Program terminated with signal 6, Aborted.
+\item Program terminated with signal 8, Arithmetic exception.
+\item Program terminated with signal 11, Segmentation fault.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Crashes y coredumps - División por cero}
+\begin{lstlisting}
+void
+sigpfe ()
+{
+    int a = 1;
+    int b = 0;
+    float c;
+    c = a/b;
+    c++;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Crashes y coredumps - Fallo de pagina de memoria}
+\begin{lstlisting}
+void
+sigsegv ()
+{
+    *(int*)2340=1000;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Crashes y coredumps - Abort!}
+\begin{lstlisting}
+void
+sigabort ()
+{
+    char * p = (char*)malloc(1);
+    free(p);
+    free(p);
+    //abort();
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Crashes y coredumps - Instruccion ilegal}
+\begin{lstlisting}
+void
+sigill ()
+{
+    asm ( ".byte -2\n" );
+}
+\end{lstlisting}
+En otros OSs tambien aparece \verb=SIGBUS=
+\end{frame}
+
+
+
+
+\section{Depurando remotamente}
+\begin{frame}[fragile]{Depurando remotamente - gdbserver}
+\begin{itemize}
+\item \verb=gdbserver= es un depurador reducido que puede controlarse via gdb
+\item \verb=gdb= y \verb=gdbserver= se comunican por TCP o una linea serial
+\item Una vez establecida la comunicación GDB se comporta normalmente
+\item El server se ejecuta así:
+\begin{verbatim}
+$ gdbserver host:2345 programa param1 param2
+\end{verbatim}
+\item Y desde el gdb remoto te conectas así:
+\begin{verbatim}
+(gdb) target remote host:2345 
+\end{verbatim}
+\end{itemize}
+\begin{quotation}
+gdbserver is not a complete replacement for the debugging stubs, because it requires essentially the same operating-system facilities that GDB itself does. In fact, a system that can run gdbserver to connect to a remote GDB could also run GDB locally!
+\end{quotation}
+\end{frame}
+
+\begin{frame}[fragile]{Depurando remotamente - otra opción?}
+\begin{itemize}
+\item Poner un GDB completo en el target
+\item Conetarse por ssh/telnet
+\item Con \verb=show directory= se listan los caminos donde gdb busca los archivos de código fuente
+\item Con \verb=directory CAMINO= se agregan CAMINOS donde GDB buscara el código
+\item Montar un \verb=nfs= en el target con el repositorio de fuentes en uso
+\item Probarlo con \verb=list=
+\end{itemize}
+\end{frame}
+
+
+\section{Referencias}
+\begin{frame}{Referencias}
+\begin{itemize}
+\item \url{http://gdb.gnu.org/}
+\item \url{http://www.acsu.buffalo.edu/~charngda/gdb.html}
+\item \url{http://www.ibm.com/developerworks/aix/library/au-gdb.html}
+\item \url{http://sourceware.org/gdb/onlinedocs/gdb/}
+\item \url{mailto:felipe.andres.manzano@gmail.com}
+\end{itemize}
+\end{frame}
+
+
+{\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{machinalis_b}}
+\begin{frame}{}\end{frame}
+}
+
+\end{document}
+
