@@ -133,7 +133,7 @@ Hay varios módulos
 Algunos hints:
 
  * Se pueden pasar muchos paquetes a `pkg-config`
- * Se puede usar `--libs` y `--cflags` a la vez para programas autocontenidos. 
+ * Se puede usar `--libs` y `--cflags` a la vez para programas auto-contenidos. 
 
 ---- 
 # Tipos básicos
@@ -215,7 +215,7 @@ Ejemplo:
 		    g_free,
 		    g_free);
 	
-	    g_warn_if_fail(f!= NULL); /* No habra usuarios disponibles*/
+	    g_warn_if_fail(f!= NULL); /* No habrá usuarios disponibles*/
 
 	    while (fscanf(f, "%s %s", usuario, clave) == 2) {
 		    g_hash_table_insert(usuarios, g_strdup(usuario), g_strdup(clave));
@@ -369,8 +369,8 @@ Esta es la API de una de las varias funciones de process spawning:
  
 Ejercicio:
 
-  * Usar esto en un programa que genere los numeros del 1 al 100...
-  * ...los filtre por 'grep [37]'
+  * Usar esto en un programa que genere los números del 1 al 100...
+  * ...los filtre por `grep [37]`
   * Y los muestre en la pantalla
  
 ----
@@ -459,15 +459,15 @@ Notar el “cast” a `G_OBJECT`. En realidad suele hacerse:
 ----
 # Boxed objects
 
-Como definir objetos es engorroso y uno a veces nomás quiere pasar una estructura,
-una opcion intermedia es usar `GBoxed`
+Como definir objetos es engorroso y uno a veces sólo quiere pasar una estructura,
+una opción intermedia es usar `GBoxed`
 
     !c
     GType g_boxed_type_register_static (const gchar *name,
                                         GBoxedCopyFunc boxed_copy,
                                         GBoxedFreeFunc boxed_free);
 
-Se puede meter cualquier cosa manejada via punteros (ej: objetos de C++)
+Se puede meter cualquier cosa manejada vía punteros (ej: objetos de C++)
 
 Ejercicio: Hacer un box para `list<int>`
 
@@ -536,7 +536,7 @@ Todos ellos son reference counted, pero no “objetos”
 ----
 # Fuentes
 
- * Se crean con `_new`, pero recien creadas no hacen nada
+ * Se crean con `_new`, pero recién creadas no hacen nada
  * Hay que hacerle `_attach(contexto)`
  * Se le puede asociar:
     * File descriptors
