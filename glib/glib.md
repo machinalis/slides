@@ -1,10 +1,85 @@
+#GLib
+
+----
+# GLib NO es
+
+## Glibc (GNU C Standard Library)
+## Nada que ver con GL / OpenGL
+
+----
+# GLib es
+
+## Una bolsa de “utilidades”
+
+----
+# GLib: genealogía
+
+ * En los principios existía GIMP
+ * Los componentes reusables de GIMP se volvieron GTK+
+ * Los componentes no gráficos de GTK+ se volvieron GLib
+
+----
+# Entonces GLib puede usarse...
+
+## Para casi cualquier cosa, con UI o no 
+## (puede verse como una extensión de la biblioteca estándar)
+
+## *“GLib provides the core application building blocks for libraries and applications written in C.”*
+
+----
+# Algunas características
+
+ * Puro C (nada de C++!)
+ * Portable (OS/plataforma)
+ * Bien mantenido (último release estable 2.28.6, el 14 de abril de 2011)
+ * Licencia: LGPL
+ * Ubicua en sistemas GNU/Linux
+
+----
+# Bueno... pero ¿qué hay en GLib?
+
+ * Tipos y estructuras de datos simples y complejos (desde enteros hasta hash tables)
+ * Herramientas portables para threading (threads, semáforos, mutexes, colas sincronizadas...)
+ * Infraestructura para aplicaciones basadas en eventos (main loop y señales)
+ * Un sistema de tipos y orientación a objetos 
+
+----
+# Bueno... pero ¿qué hay en GLib?
+
+Y también:  logging, timers, unit-testing, I/O asíncrono, conversión de endian, reporte de errores, constantes matemáticas, conversiones de charset, operaciones de fecha y hora, cargado de módulos en runtime, parsers, manejo de URIs, manejo de línea de comandos, expresiones regulares, internacionalización, ...
+
+----
+# Alternativas
+
+ * C++ con STL
+ * Apache Portable Runtime
+    * Menos estructuras, más IPC
+ * WxBase
+    * Pegado a WxWidgets
+ * QtCore
+    * En C++
+    * Pegado a Qt
+
+----
+# No voy a hablar de 
+
+ * Como compilar GLib
+    * Instalen el paquete de desarrollo
+ * Estructuras de datos complejas
+    * Si usan C++, usen la STL o Boost
+ * Las infinitas funciones auxiliares
+    * Lean el manual: http://developer.gnome.org/glib/ 
+    * Instalen devhelp
+
+----
+
 # GLib: A los bifes
 
 ----
 
 # Hello World
 
-Un programa que usa una función de Glib
+Un programa que usa una función de GLib
 
     !c
     /* hello-glib.c */
