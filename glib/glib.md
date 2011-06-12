@@ -17,7 +17,7 @@ Un programa que usa una función de Glib
 	    g_print("%s\n", "Hello World!");
 	    return 0;
     }
-   
+
 Compilando:
 
     !sh
@@ -86,7 +86,7 @@ Ejemplo:
     gint16 value = G_MAXUINT16;
     g_print ("%" G_GINT16_FORMAT, value);
     g_print ("%#" G_GINT16_MODIFIER "x", value);
-    
+ 
 ----
 # C "orientado a objetos"
 
@@ -175,7 +175,7 @@ Ejemplo:
 		    } else {
 			    g_print("Usuario(%s)/clave(%s); inexistente o no coinciden!\n", nombre, clave);
 		    }
-		    
+		
 	    }
 	    g_hash_table_destroy(usuarios);
 	    return 0;
@@ -200,7 +200,7 @@ En el ejemplo anterior, con valgrind
     ==28649==      possibly lost: 1,744 bytes in 6 blocks
     ==28649==    still reachable: 5,418 bytes in 13 blocks
     ==28649==         suppressed: 0 bytes in 0 blocks
-    
+
 ----
 # Apagando GSlice
 
@@ -291,13 +291,13 @@ Esta es la API de una de las varias funciones de process spawning:
                                        gint                 *standard_output,
                                        gint                 *standard_error,
                                        GError              **error);
-    
+ 
 Ejercicio:
 
   * Usar esto en un programa que genere los numeros del 1 al 100...
   * ...los filtre por 'grep [37]'
   * Y los muestre en la pantalla
-    
+ 
 ----
 
 # GObject
@@ -368,7 +368,7 @@ El seteo es a través de `GValue`s
     GValue val = { 0, };
 
     ...
-    
+ 
     g_value_init (&val, G_TYPE_CHAR);
     g_value_set_char (&val, '*');
 
@@ -404,9 +404,9 @@ El uso es fácil:
 
     !c
     g_signal_connect(G_OBJECT(objeto), "señal", func, NULL);
-    
+ 
     ...
-    
+ 
     tipo func(int arg1, float arg2, gpointer user_data) {
         ....
         return x;
