@@ -2,6 +2,11 @@
   font-family: 'Goudy';
   src: url('../fonts/OFLGoudyStMTT.ttf');
 }
+@font-face {
+  font-family: 'Goudy';
+  font-style: italic;
+  src: url('../fonts/OFLGoudyStMTT-Italic.ttf');
+}
 
 body {
   font: 18px "Goudy" "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
