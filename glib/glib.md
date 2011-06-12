@@ -138,8 +138,8 @@ Algunos hints:
 ---- 
 # Tipos básicos
 
- * GLib define `gint`, `gchar`, `gdouble`, ... "por completitud"
- * Y para escribir "más fácil", `gpointer`, `gconstpointer`, `gushort`
+ * GLib define `gint`, `gchar`, `gdouble`, ... “por completitud”
+ * Y para escribir “más fácil”, `gpointer`, `gconstpointer`, `gushort`
  * Y para unificar varios tipos de distintos estándares, `gboolean`, `gsize`, ...
  * Un poco más útil, GLib define tipos con tamaño definido
     * `gint8`, `guint8`, ... `guint64`
@@ -163,10 +163,10 @@ Ejemplo:
     g_print ("%#" G_GINT16_MODIFIER "x", value);
  
 ----
-# C "orientado a objetos"
+# C “orientado a objetos”
 
 ----
-# Anatomía de una "clase" de GLib
+# Anatomía de una “clase” de GLib
 
 Las reglas de nombres son muy consistentes y vale la pena aprenderlas:
 
@@ -405,8 +405,8 @@ Esto es importante en contextos donde se comparten los objetos:
 El sistema de `GType` permite, con una API, definir tipos dados lo siguiente:
 
  * Tamaño
- * "constructor" / "destructor" de instancia
- * "constructor" / "destructor" de clase (opcional)
+ * “constructor” / “destructor” de instancia
+ * “constructor” / “destructor” de clase (opcional)
  * Funciones de inicialización, liberado, copia, manejo de varargs
  * Algunos flags
  
@@ -431,7 +431,7 @@ uno de los pocos tipo diseñados para ser usados sin alocación dinámica:
     g_value_set_int (&a, 42);
 
 Soporta todos los tipos que puede especificar `GType`: básicos, arreglos,
-"objetos", etc.
+“objetos”, etc.
 
 ----
 # Properties
@@ -451,7 +451,7 @@ El seteo es a través de `GValue`s
 
     g_value_unset (&val);
 
-Notar el "cast" a `G_OBJECT`. En realidad suele hacerse:
+Notar el “cast” a `G_OBJECT`. En realidad suele hacerse:
 
     !c
     g_object_set (G_OBJECT (bar), "nombre-propiedad", '*');
@@ -496,7 +496,7 @@ Se puede filtrar un poco:
 
 # Emisión de señales...
 
- * El handler puede ser de clase, o de instancia, sin contar "emission hooks"
+ * El handler puede ser de clase, o de instancia, sin contar “emission hooks”
  * Se pueden bloquear handlers con `g_signal_handler_block()`
 
 Las 5 etapas de emisión se dan secuencialmente, a menos que la emisión se detenga o reinicie:
@@ -523,7 +523,7 @@ Las 5 etapas de emisión se dan secuencialmente, a menos que la emisión se dete
     * Asociados a un contexto
     * Anidables
 
-Todos ellos son reference counted, pero no "objetos".
+Todos ellos son reference counted, pero no “objetos”
 
 ----
 # Contextos
