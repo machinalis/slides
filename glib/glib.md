@@ -105,7 +105,7 @@ Compilando:
 
 # `pkg-config`
 
-Se originó en GTK, pero se independizó. Ahora se usa para muchas bibliotecas
+Se originó en GTK+, pero se independizó. Ahora se usa para muchas bibliotecas
 (en Linux)
 
     !sh
@@ -124,7 +124,7 @@ Las ventajas:
  
 # `pkg-config` para GLib
 
-Hay varios módulos
+Hay varios *módulos*
 
  * `glib-2.0`: dónde está casi todo
  * `gthread-2.0 gobject2.0`: El sistema de tipos de GObject
@@ -195,6 +195,55 @@ Ejemplo:
     diana 123456
 
 ----
+# Hint
+
+    !c
+    #include <glib.h>
+    #include <stdio.h>
+    #include <string.h>
+
+    GHashTable *usuarios = NULL;
+
+    void cargar_usuarios(gchar *archivo) {
+	    FILE *f = fopen(archivo, "r");
+	    gchar usuario[50], clave[50]; 
+	    /* Esto es susceptible a buffer overflow. Solo para simplificar el ejemplo */
+	
+	    /* CREAR HASH TABLE */
+
+	    while (fscanf(f, "%s %s", usuario, clave) == 2) {
+	        /* INSERTAR */
+	    }
+	    fclose(f);
+    }
+
+----
+# Hint(2)
+
+    !c
+    gint main(gint argc, gchar **argv) {
+	    cargar_usuarios("usuarios.txt");
+	    while (TRUE) {
+		    gchar nombre[50], clave[50];
+
+		    /* Preguntar al usuario */
+		    g_print("Usuario: ");
+		    fgets(nombre, G_N_ELEMENTS(nombre), stdin);
+		    g_print("Clave: ");
+		    fgets(clave, G_N_ELEMENTS(clave), stdin);
+
+		    /* Sacar el \n final */
+		    nombre[strlen(nombre)-1] = clave[strlen(clave)-1] = '\0';
+
+		    /* VALIDAR */
+		
+	    }
+	    /* LIBERAR MEMORIA */
+	    return 0;
+    }
+
+
+----
 # Una solución
 
     !c
@@ -230,8 +279,7 @@ Ejemplo:
     gint main(gint argc, gchar **argv) {
 	    cargar_usuarios("usuarios.txt");
 	    while (TRUE) {
-		    gchar nombre[50];
-		    gchar clave[50];
+		    gchar nombre[50], clave[50];
 		    gchar *clave_real = NULL;
 
 		    /* Preguntar al usuario */
@@ -242,7 +290,6 @@ Ejemplo:
 
 		    /* Sacar el \n final */
 		    nombre[strlen(nombre)-1] = clave[strlen(clave)-1] = '\0';
-
 		    /* Validar */
 		    clave_real = g_hash_table_lookup(usuarios, nombre);
 		    if (g_strcmp0(clave, clave_real) == 0) {
@@ -344,7 +391,7 @@ Las reglas para el consumidor son:
    informan éxito/fallo de formas alternativas
  * Siempre inicializar los `GError *` a `NULL`
  * Cuando uno pasa un `GError`, hacer algo al respecto:
-     * Hacer `g_error_free` y retornar
+     * Hacer `g_error_free()` y retornar
      * Manejar el problema, usar `g_clear_error()` si uno planea seguir.
  * Acordarse del `g_error_free()` después
 
@@ -355,17 +402,17 @@ Las reglas para el consumidor son:
 Esta es la API de una de las varias funciones de process spawning:
 
     !c
-    gboolean g_spawn_async_with_pipes (const gchar          *working_directory,
-                                       gchar               **argv,
-                                       gchar               **envp,
-                                       GSpawnFlags           flags,
+    gboolean g_spawn_async_with_pipes (const gchar      *working_directory,
+                                       gchar           **argv,
+                                       gchar           **envp,
+                                       GSpawnFlags       flags,
                                        GSpawnChildSetupFunc  child_setup,
-                                       gpointer              user_data,
-                                       GPid                 *child_pid,
-                                       gint                 *standard_input,
-                                       gint                 *standard_output,
-                                       gint                 *standard_error,
-                                       GError              **error);
+                                       gpointer          user_data,
+                                       GPid             *child_pid,
+                                       gint             *standard_input,
+                                       gint             *standard_output,
+                                       gint             *standard_error,
+                                       GError          **error);
  
 Ejercicio:
 
@@ -397,7 +444,7 @@ Vamos a ver como usar, no como hacer
 Esto es importante en contextos donde se comparten los objetos:
 
  * Olvidarse un `unref` produce leaks
- * Olvidarse un `leak` produce fallas y segfaults
+ * Olvidarse un `ref` produce fallas y segfaults
 
 ----
 # Tipos
@@ -482,7 +529,7 @@ El uso es fácil:
  
     ...
  
-    tipo func(int arg1, float arg2, gpointer user_data) {
+    tipo func(GSomeObject *sender, int arg1, float arg2, gpointer user_data) {
         ....
         return x;
     }
@@ -499,7 +546,7 @@ Se puede filtrar un poco:
  * El handler puede ser de clase, o de instancia, sin contar “emission hooks”
  * Se pueden bloquear handlers con `g_signal_handler_block()`
 
-Las 5 etapas de emisión se dan secuencialmente, a menos que la emisión se detenga o reinicie:
+Las 6 etapas de emisión se dan secuencialmente, a menos que la emisión se detenga o reinicie:
 
  1. `RUN_FIRST`: handler de clase (según flags)
  2. `EMISSION_HOOK`: en el orden que se agregaron
@@ -543,8 +590,7 @@ Todos ellos son reference counted, pero no “objetos”
     * Procesos hijos
     * timeout
     * idle
-    * Sources hijos
-    * Otra fuente!
+    * Otra fuente (“hijos”)!
 
 ----
 # Fuentes(2)
@@ -565,7 +611,8 @@ Todos ellos son reference counted, pero no “objetos”
 
  * Wrapper de fds / socket
  * La API no tiene nada muy sorprendente
- * se les puede pedir un `GSource` con sus eventos
+ * Se les puede pedir un `GSource` con sus eventos
+    * Pero de vuelta, hay auxiliares para evitarse el problema
 
 ----
 # Ejercicio:
