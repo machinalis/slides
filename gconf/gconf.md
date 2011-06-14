@@ -153,6 +153,9 @@ Para tipos más complicados
 	    </entry>
     </gconf>
 
+----
+# Formato del storage(3)
+
 También se puede armar jerarquía en el XML:
 
     !xml
@@ -227,7 +230,7 @@ El caso simple:
                                      NULL
                                     );
 
-Para compilar: `pkg-config gconf-2.0.pc`
+Para compilar: `pkg-config gconf-2.0`
 
 ----
 # API
