@@ -304,7 +304,7 @@ Ejemplo:
     }
 
 ----
-# Notas sobre debugging de memoria
+# Con debugging de memoria
 
  * GLib tiene su propio manejador de memoria que usa `malloc()` por detrás
     * Es más eficiente, práctico, sin sodio, y no daña la capa de ozono
