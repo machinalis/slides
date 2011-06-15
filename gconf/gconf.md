@@ -111,7 +111,7 @@ Ejemplo:
 # Formato del storage
 
  * Depende del backend que usemos
- * El "estándar" es el llamado `xml`
+ * El “estándar” es el llamado `xml`
  * La jerarquía usa directorios de filesystem
 
 Por ejemplo:
@@ -282,7 +282,7 @@ En la función notificadora, recibimos un GConfEntry
 
     v = gconf_entry_get_value(value);
     g_assert(v->type == GCONF_VALUE_STRING);
-    g_print("key=%s", gconf_value_get_string(v));
+    g_print("value=%s", gconf_value_get_string(v));
 
 Mas detalles de la API en <http://developer.gnome.org/gconf/stable/>
 
