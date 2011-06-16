@@ -2,7 +2,7 @@
 
 ----
 
-# "The desktop bus"
+# “The desktop bus”
 
 ----
 
@@ -25,7 +25,7 @@
     * Atado a la plataforma
     * espacio de nombres muy plano
  * D-Bus es el acuerdo entre ambos
-    * "DCOP", la nueva generación
+    * “DCOP, la nueva generación”
 
 ----
 # Comunicación en D-Bus
@@ -90,7 +90,7 @@
 ----
 # Ejemplo
 
-`dbus-send` permite armar ejemplos "a mano"
+`dbus-send` permite armar ejemplos “a mano”
 
     !sh
     $ dbus-send --print-reply 
@@ -131,7 +131,7 @@
 ----
 # Del lado de la aplicación
 
- * Cada aplicacion conectada contiene "objetos"
+ * Cada aplicacion conectada contiene “objetos”
     * Objetos C++
     * Objetos Python
     * GObject
@@ -139,7 +139,7 @@
  * Un objeto es una identidad, no un tipo
  * Similar a sistemas de componentes
  * Cada objeto tiene su dirección, el *object path*
- * Las otras aplicaciones suelen usar un "proxy"
+ * Las otras aplicaciones suelen usar un “proxy”
 
 ----
 # Object path
@@ -184,7 +184,7 @@
 # Llamada a métodos, por dentro
 
  * La aplicación llama al proxy, que genera un mensaje
-    * O la aplicación genera un mensaje "a mano"
+    * O la aplicación genera un mensaje “a mano”
  * El mensaje contiene una dirección de conexión, path, interfaz, método, argumentos
  * El mensaje es enviado al daemon de canal
  * El daemon mira la dirección de conexión. Si hay un proceso dueño de ese nombre, 
@@ -202,7 +202,7 @@
  * Multiples parámetros
  * Sin valores de retorno
  * Sin destinatario explícito
- * El receptor registra "matchers"
+ * El receptor registra “matchers“
 
 ----
 # Matchers
@@ -217,7 +217,7 @@
 ----
 # Servicios   
 
- * Una aplicación puede ser "dueña" de una dirección
+ * Una aplicación puede ser “dueña” de una dirección
  * Se puede definir una activación
  
 Esto permite crear instancias nuevas la primera vez, y reusar las siguientes. 
@@ -288,6 +288,6 @@ Ejemplo: `NetworkManager`
 	    </interface>
     </node>
 
-Lo "traducimos con: `dbus-binding-tool --prefix=server_object --mode=glib-client interface.xml`
+Lo “traducimos” con: `dbus-binding-tool --prefix=server_object --mode=glib-client interface.xml`
 
 
