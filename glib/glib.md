@@ -203,22 +203,19 @@ Ejemplo:
 
     !c
     #include <glib.h>
-    #include <stdio.h>
-    #include <string.h>
+    ...
 
     GHashTable *usuarios = NULL;
 
-    void cargar_usuarios(gchar *archivo) {
-	    FILE *f = fopen(archivo, "r");
-	    gchar usuario[50], clave[50]; 
-	    /* Esto es susceptible a buffer overflow. Solo para simplificar el ejemplo */
-	
-	    /* CREAR HASH TABLE */
+    void cargar_usuarios(const char *archivo) {
+	    ifstream f(archivo);
+	    string usuario, clave;
 
-	    while (fscanf(f, "%s %s", usuario, clave) == 2) {
-	        /* INSERTAR */
+	        /* CREAR HASH TABLE */
+
+	    while (f >> usuario >> clave) {
+	        /* INSERTAR  copia de usuario.c_str(), ... */
 	    }
-	    fclose(f);
     }
 
 ----
@@ -228,24 +225,22 @@ Ejemplo:
     gint main(gint argc, gchar **argv) {
 	    cargar_usuarios("usuarios.txt");
 	    while (TRUE) {
-		    gchar nombre[50], clave[50];
+		    string nombre;
+		    string clave;
+		    gchar *clave_real = NULL;
 
 		    /* Preguntar al usuario */
-		    g_print("Usuario: ");
-		    fgets(nombre, G_N_ELEMENTS(nombre), stdin);
-		    g_print("Clave: ");
-		    fgets(clave, G_N_ELEMENTS(clave), stdin);
-
-		    /* Sacar el \n final */
-		    nombre[strlen(nombre)-1] = clave[strlen(clave)-1] = '\0';
+		    cout << "Usuario: " << flush;
+		    cin >> nombre;
+		    if (nombre == "q") break; /* Salir si no ponen nada */
+		    cout << "Clave: " << flush;
+		    cin >> clave;
 
 		    /* VALIDAR */
-		
 	    }
 	    /* LIBERAR MEMORIA */
 	    return 0;
     }
-
 
 ----
 # Una solución
