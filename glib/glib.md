@@ -132,8 +132,12 @@ Hay varios *módulos*
  
 Algunos hints:
 
+    !sh
+    $ gcc $(pkg-config --libs --cflags glib-2.0) hello-glib.c -o hello
+
  * Se pueden pasar muchos paquetes a `pkg-config`
  * Se puede usar `--libs` y `--cflags` a la vez para programas auto-contenidos. 
+
 
 ---- 
 # Tipos básicos
