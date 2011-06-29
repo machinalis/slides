@@ -37,9 +37,6 @@ gint main(gint argc, gchar **argv) {
 		cout << "Clave: " << flush;
 		cin >> clave;
 
-//		/* Sacar el \n final */
-//		nombre[strlen(nombre)-1] = clave[strlen(clave)-1] = '\0';
-
 		/* Validar */
 		clave_real = (gchar *)g_hash_table_lookup(usuarios, nombre.c_str());
 		if (g_strcmp0(clave.c_str(), clave_real) == 0) {
