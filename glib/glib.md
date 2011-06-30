@@ -127,7 +127,7 @@ Las ventajas:
 Hay varios *módulos*
 
  * `glib-2.0`: dónde está casi todo
- * `gthread-2.0 gobject2.0`: El sistema de tipos de GObject
+ * `gthread-2.0 gobject-2.0`: El sistema de tipos de GObject
  * `gmodule-2.0` ó `gmodule-no-export-2.0`: Carga de módulos en runtime
  
 Algunos hints:
@@ -203,6 +203,10 @@ Ejemplo:
 
     !c
     #include <glib.h>
+    #include <iostream>
+    #include <fstream>
+    
+    using namespace std;
     ...
 
     GHashTable *usuarios = NULL;
