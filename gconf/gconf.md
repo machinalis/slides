@@ -191,7 +191,7 @@ Ejemplo:
 ----
 # Convenciones del store
 
- * Cada apliación pone sus cosas en `apps/`nombre
+ * Cada aplicación pone sus cosas en `apps/`nombre
     * Es buena idea categorizar
  * Se reserva `desktop`, `system`, y `schemas`
     * `schemas` tiene un espejo del árbol
@@ -280,7 +280,7 @@ En la función notificadora, recibimos un GConfEntry
     GConfValue *v = NULL;
     g_print("key=%s", gconf_entry_get_key(entry));
 
-    v = gconf_entry_get_value(value);
+    v = gconf_entry_get_value(entry);
     g_assert(v->type == GCONF_VALUE_STRING);
     g_print("value=%s", gconf_value_get_string(v));
 
@@ -289,7 +289,7 @@ Mas detalles de la API en <http://developer.gnome.org/gconf/stable/>
 ----
 # GConfEngine
 
-En genral no hace falta/no hay que usarlo. Pero los siguientes son
+En general no hace falta/no hay que usarlo. Pero los siguientes son
 útiles:
 
     !c
