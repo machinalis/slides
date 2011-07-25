@@ -1,0 +1,943 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<zuiprezi>
+  <version>1</version>
+  <zui-table>
+    <settings>
+      <autoplay>
+        <delay>4000</delay>
+      </autoplay>
+      <bounds height="122227.35" width="196059.6" x="-221143.2" y="-14741.05" />
+    </settings>
+    <object id="4_409964" r="0" s="21.25262451171875" type="image" x="-37476.65" y="31505.2">
+      <source h="344" w="344">12901327.png<url>12901327.png</url>
+      </source>
+    <resource><id>
+        12901327
+        </id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/9/f/9/07de4f921d014cacf1a2ab33666ddb33176e0.png</url></resource></object>
+    <object class="body" id="3_409964" r="32.81119359545078" s="37.12042139038701" type="label" x="-42510.65" y="28448.3">
+      <textfield>
+        <x>-48.2</x>
+        <y>-16.4</y>
+        <text>Cercanía</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Cercanía</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="5_409964" r="0" s="37.50648498535156" type="label" x="-31216.2" y="31479.95">
+      <textfield>
+        <x>-52.85</x>
+        <y>-16.4</y>
+        <text>Ambiente</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Ambiente</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="6_409964" r="-31.333450354178716" s="38.48559811608362" type="label" x="-42551.75" y="34386.9">
+      <textfield>
+        <x>-47.5</x>
+        <y>-16.4</y>
+        <text>Seriedad</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Seriedad</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="7_409964" r="-56.91339119875892" s="38.513235783398024" type="label" x="-40546.55" y="36610">
+      <textfield>
+        <x>-50.15</x>
+        <y>-16.4</y>
+        <text>Inserción</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Inserción</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="8_409964" r="90.25879985425324" s="36.987468381705185" type="label" x="-37458.35" y="38715.9">
+      <textfield>
+        <x>-82.15</x>
+        <y>-16.4</y>
+        <text>Sello de calidad</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Sello de calidad</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="9_409964" r="52.622218625214494" s="35.27063922283684" type="label" x="-33319.75" y="37863.55">
+      <textfield>
+        <x>-92.1</x>
+        <y>-16.4</y>
+        <text>Acortar el camino</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Acortar el camino</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="10_409964" r="29.54592806173073" s="35.449469937788905" type="label" x="-32239.45" y="34390.2">
+      <textfield>
+        <x>-48.2</x>
+        <y>-16.4</y>
+        <text>Proyecto</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Proyecto</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="11_409964" r="0" s="36.196258544921875" type="label" x="-44142.95" y="31372.1">
+      <textfield>
+        <x>-73.55</x>
+        <y>-16.4</y>
+        <text>Conocimiento</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Conocimiento</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="12_409964" r="-32.34534930764321" s="33.19964168323851" type="label" x="-30766" y="27598.55">
+      <textfield>
+        <x>-101.1</x>
+        <y>-16.4</y>
+        <text>Nuestra experiencia</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Nuestra experiencia</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object id="14_409964" r="0" s="21.89048767089844" type="image" x="-88376.45" y="-156.2">
+      <source h="344" w="344">12902834.png<url>12902834.png</url>
+      </source>
+    <resource><id>
+        12902834
+        </id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/3/0/3/93485a059639e29fdbbea5bf06f68c2c51def.png</url></resource></object>
+    <object class="body" id="13_409964" r="32.81119359545078" s="37.12042139038701" type="label" x="-91507.2" y="-2083.3">
+      <textfield>
+        <x>-120.4</x>
+        <y>-16.4</y>
+        <text>Inserción</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Inserción</FONT>
+          </P>
+        </htmlText>
+        <w>240.85</w>
+        <h>32.8</h>
+      <url /></textfield>
+    </object>
+    <object class="body" id="0_184204" r="0" s="146.49835205078125" type="label" x="-109571.25" y="45032.2">
+      <textfield>
+        <x>-265.05</x>
+        <y>-59.6</y>
+        <text>machinalis@famaf: el desafío de emprender e incubar
+Walter Alini
+Machinalis
+19 de Octubre de 2010</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">machinalis@famaf: el desafío de emprender e incubar</FONT>
+          </P>
+          <P ALIGN="CENTER">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Walter Alini</FONT>
+          </P>
+          <P ALIGN="CENTER">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Machinalis</FONT>
+          </P>
+          <P ALIGN="CENTER">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">19 de Octubre de 2010</FONT>
+          </P>
+        </htmlText>
+        <w>530.15</w>
+        <h>119.2</h>
+      <url /></textfield>
+    </object>
+    <object class="body" id="1_184204" r="0" s="576.56640625" type="label" x="-190814.4" y="44670.6">
+      <textfield>
+        <x>-10.9</x>
+        <y>-16.4</y>
+        <text>?</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">?</FONT>
+          </P>
+        </htmlText>
+        <w>21.85</w>
+        <h>32.8</h>
+      <url /></textfield>
+    </object>
+    <object class="body" id="2_184204" r="-3.778650052948785" s="164.39840222320402" type="label" x="-185588.7" y="72728.95">
+      <textfield>
+        <x>-19.3</x>
+        <y>-16.4</y>
+        <text>NO</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">NO</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="3_184204" r="0" s="146.49835205078125" type="label" x="-36893.75" y="23708.1">
+      <textfield>
+        <x>-64.25</x>
+        <y>-16.4</y>
+        <text>+machinalis</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">+machinalis</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object id="6_184204" r="0.02010267680957109" s="5.285064068890341" type="image" x="-41138.6" y="54183.7">
+      <source h="1936" w="2592">13159837.jpg<url>13159837.jpg</url>
+      </source>
+    <resource><id>
+        13159837
+        </id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/f/d/0/05954d1145a6a7c2743f5a69cb85864d3cd53.jpg</url></resource></object>
+    <object class="body" id="5_184204" r="0" s="52.91212463378906" type="label" x="-182763.4" y="40827.85">
+      <textfield>
+        <x>-135.4</x>
+        <y>-16.4</y>
+        <text>¿Tiene sentido emprender?</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">¿Tiene sentido emprender?</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="7_184204" r="0" s="54.592193603515625" type="label" x="-184825.9" y="45940.35">
+      <textfield>
+        <x>-120.1</x>
+        <y>-16.4</y>
+        <text>¿Tiene sentido incubar?</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">¿Tiene sentido incubar?</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="13_184204" r="0" s="117.2866668701172" type="label" x="-138177.4" y="82121.35">
+      <textfield>
+        <x>-105.6</x>
+        <y>-16.4</y>
+        <text>Hacen falta dos locos</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Hacen falta dos locos</FONT>
+          </P>
+        </htmlText>
+        <w>211.2</w>
+        <h>32.8</h>
+      <url /></textfield>
+    </object>
+    <object id="16_184204" r="-0.003475302415965137" s="14.842330959920291" type="image" x="-98708.05" y="102404.4">
+      <source h="685" w="1024">13161249.jpg<url>13161249.jpg</url>
+      </source>
+    <resource><id>
+        13161249
+        </id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/b/5/0/da907dc09b7a2e1fbc5510ad31065c19f656d.jpg</url></resource></object>
+    <object id="1_34132" r="0" s="31.977630615234375" type="image" x="-138100.9" y="92767.1">
+      <source h="500" w="273">14362468.jpg<url>14362468.jpg</url>
+      </source>
+    <resource><id>
+        14362468
+        </id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/5/5/0/136264e46b7a45530335b3b248d9bf07e72d8.jpg</url></resource></object>
+    <object class="invisible" id="5_34132" r="0" s="92.025114386413" type="button" x="-110288.25" y="44236.8">
+      <type>invisible<url /></type>
+      <size>
+        <w>858</w>
+        <h>209</h>
+      </size>
+    </object>
+    <object class="invisible" id="7_34132" r="0" s="34.24528503417969" type="button" x="-185671.15" y="44544.35">
+      <type>invisible<url /></type>
+      <size>
+        <w>596.05</w>
+        <h>330.35</h>
+      </size>
+    </object>
+    <object class="invisible" id="8_34132" r="0" s="68.53953552246094" type="button" x="-138262.9" y="90866.35">
+      <type>invisible<url /></type>
+      <size>
+        <w>367</w>
+        <h>323</h>
+      </size>
+    </object>
+    <object id="10_34132" r="0" s="30.14056396484375" type="image" x="-99256.65" y="81242.65">
+      <source h="410" w="520">14365352.jpg<url>14365352.jpg</url>
+      </source>
+    <resource><id>
+        14365352
+        </id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/d/9/d/a2ecc39274cf806ad37a75632025436c5b92b.jpg</url></resource></object>
+    <object id="15_34132" r="-0.2849984316844898" s="23.786350782195186" type="image" x="-58520.9" y="79040.45">
+      <source h="591" w="492">14366997.png<url>14366997.png</url>
+      </source>
+    <resource><id>
+        14366997
+        </id><url>http://0103.static.prezi.com.s3.amazonaws.com/media/a/6/b/53992ef504c6fa31c34f4b1826fa9c907a114.png</url></resource></object>
+    <object class="body" id="16_34132" r="0" s="40.71942138671875" type="label" x="-58426.15" y="72657.7">
+      <textfield>
+        <x>-142.1</x>
+        <y>-16.4</y>
+        <text>Aplicaciones y servicios web</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Aplicaciones y servicios web</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="17_34132" r="0" s="37.92216491699219" type="label" x="-60548.15" y="74285.45">
+      <textfield>
+        <x>-43.9</x>
+        <y>-30.8</y>
+        <text>Intranets
+     CMS</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Intranets</FONT>
+          </P>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">CMS</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="19_34132" r="0" s="45.666412353515625" type="label" x="-61923" y="76185.2">
+      <textfield>
+        <x>-48.6</x>
+        <y>-16.4</y>
+        <text>Backends</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Backends</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="20_34132" r="0" s="38.58186340332031" type="label" x="-58271.9" y="79126.95">
+      <textfield>
+        <x>-101.5</x>
+        <y>-59.6</y>
+        <text>Web
+Desktop
+Mobile
+Sistemas Embebidos</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Web</FONT>
+          </P>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Desktop</FONT>
+          </P>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Mobile</FONT>
+          </P>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Sistemas Embebidos</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="23_34132" r="0" s="45.666412353515625" type="label" x="-62936.75" y="82626.45">
+      <textfield>
+        <x>-25.95</x>
+        <y>-16.4</y>
+        <text>Foco</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Foco</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="24_34132" r="0" s="38.58186340332031" type="label" x="-58114.4" y="84550.95">
+      <textfield>
+        <x>-110.8</x>
+        <y>-30.8</y>
+        <text>Calidad de Servicio
+Uso de Software Libre</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Calidad de Servicio</FONT>
+          </P>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Uso de Software Libre</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="25_34132" r="-19.811652484689" s="72.81109446816244" type="label" x="-58524.35" y="99929.15">
+      <textfield>
+        <x>-138.7</x>
+        <y>-30.8</y>
+        <text>http://www.machinalis.com
+@machinalis</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">
+              <A HREF="http://www.machinalis.com" TARGET="_blank">
+                <U>http://www.machinalis.com</U>
+              </A>
+            </FONT>
+          </P>
+          <P ALIGN="CENTER">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">@machinalis</FONT>
+          </P>
+        </htmlText>
+        <w>277.4</w>
+        <h>61.6</h>
+      <url /></textfield>
+    </object>
+    <object class="invisible" id="26_34132" r="-0.26491818104156634" s="39.3541804325503" type="button" x="-57741.85" y="99718.9">
+      <type>invisible<url /></type>
+      <size>
+        <w>667</w>
+        <h>139</h>
+      </size>
+    </object>
+    <object class="invisible" id="27_34132" r="0" s="39.35496520996094" type="button" x="-58539.4" y="78571.7">
+      <type>invisible<url /></type>
+      <size>
+        <w>318</w>
+        <h>384</h>
+      </size>
+    </object>
+    <object class="invisible" id="0_52935" r="0.02010267680957109" s="103.45733087344838" type="button" x="-37447.65" y="31458.35">
+      <type>invisible<url /></type>
+      <size>
+        <w>229</w>
+        <h>214</h>
+      </size>
+    </object>
+    <object class="body" id="8_184204" r="0" s="42.20765686035156" type="label" x="-182629.45" y="69309.45">
+      <textfield>
+        <x>-49.55</x>
+        <y>-16.4</y>
+        <text>Riesgoso</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Riesgoso</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="9_184204" r="0" s="40.77149963378906" type="label" x="-179796.95" y="70542.95">
+      <textfield>
+        <x>-51.85</x>
+        <y>-16.4</y>
+        <text>Alto fallo</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Alto fallo</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="10_184204" r="0" s="42.72325134277344" type="label" x="-177036.7" y="72086.95">
+      <textfield>
+        <x>-91.5</x>
+        <y>-16.4</y>
+        <text>Formar empleados</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Formar empleados</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="11_184204" r="0" s="32.73118591308594" type="label" x="-178291.2" y="77473.45">
+      <textfield>
+        <x>-127.75</x>
+        <y>-16.4</y>
+        <text>Los tiempos son distintos</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Los tiempos son distintos</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="12_184204" r="0" s="30.439041137695313" type="label" x="-176880.2" y="75752.45">
+      <textfield>
+        <x>-205</x>
+        <y>-16.4</y>
+        <text>Empresas esperan RRHH e investigadores</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Empresas esperan RRHH e investigadores</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="bracket" id="0_38707" r="-24.568546884974104" s="27.29965175831198" type="button" x="-178083.7" y="72008.95">
+      <type>bracket<url /></type>
+      <size>
+        <w>560</w>
+        <h>486</h>
+      </size>
+    </object>
+    <object class="body" id="2_34132" r="0" s="34.396881103515625" type="label" x="-176400.45" y="73810.7">
+      <textfield>
+        <x>-161.4</x>
+        <y>-16.4</y>
+        <text>Formar investigadores de calidad</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Formar investigadores de calidad</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="invisible" id="28_34132" r="0" s="34.52189636230469" type="button" x="-178279.95" y="72264.45">
+      <type>invisible<url /></type>
+      <size>
+        <w>644</w>
+        <h>495</h>
+      </size>
+    </object>
+    <object class="body" id="15_409964" r="0" s="36.196258544921875" type="label" x="-96466.2" y="-224.2">
+      <textfield>
+        <x>-106.45</x>
+        <y>-16.4</y>
+        <text>Temprana formación</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Temprana formación</FONT>
+          </P>
+        </htmlText>
+        <w>212.9</w>
+        <h>32.8</h>
+      <url /></textfield>
+    </object>
+    <object class="body" id="16_409964" r="-31.333450354178716" s="38.48559811608362" type="label" x="-93411.2" y="2812.8">
+      <textfield>
+        <x>-48.15</x>
+        <y>-16.4</y>
+        <text>Prestigio</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Prestigio</FONT>
+          </P>
+        </htmlText>
+        <w>96.35</w>
+        <h>32.8</h>
+      <url /></textfield>
+    </object>
+    <object class="body" id="18_409964" r="90.25879985425324" s="36.987468381705185" type="label" x="-88331.45" y="7396.85">
+      <textfield>
+        <x>-77.15</x>
+        <y>-16.4</y>
+        <text>Nuevas salidas</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Nuevas salidas</FONT>
+          </P>
+        </htmlText>
+        <w>154.3</w>
+        <h>32.8</h>
+      <url /></textfield>
+    </object>
+    <object class="body" id="19_409964" r="52.622218625214494" s="35.27063922283684" type="label" x="-84143.2" y="6511.35">
+      <textfield>
+        <x>-102.1</x>
+        <y>-16.4</y>
+        <text>Flujo de interesados</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Flujo de interesados</FONT>
+          </P>
+        </htmlText>
+        <w>204.25</w>
+        <h>32.8</h>
+      <url /></textfield>
+    </object>
+    <object class="body" id="20_409964" r="29.54592806173073" s="35.449469937788905" type="label" x="-81189.7" y="4099.35">
+      <textfield>
+        <x>-111.75</x>
+        <y>-16.4</y>
+        <text>Demandas específicas</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Demandas específicas</FONT>
+          </P>
+        </htmlText>
+        <w>223.5</w>
+        <h>32.8</h>
+      <url /></textfield>
+    </object>
+    <object class="body" id="21_409964" r="0" s="37.50648498535156" type="label" x="-80273.95" y="-121.7">
+      <textfield>
+        <x>-97.1</x>
+        <y>-16.4</y>
+        <text>Formación integral</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Formación integral</FONT>
+          </P>
+        </htmlText>
+        <w>194.25</w>
+        <h>32.8</h>
+      <url /></textfield>
+    </object>
+    <object class="body" id="22_409964" r="-32.34534930764321" s="33.19964168323851" type="label" x="-81905.7" y="-4114.7">
+      <textfield>
+        <x>-101.1</x>
+        <y>-16.4</y>
+        <text>Auto nutrimiento</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Auto nutrimiento</FONT>
+          </P>
+        </htmlText>
+        <w>202.2</w>
+        <h>32.8</h>
+      <url /></textfield>
+    </object>
+    <object class="body" id="17_409964" r="-56.87789215782242" s="38.57091526716824" type="label" x="-93082.2" y="7464.85">
+      <textfield>
+        <x>-125.95</x>
+        <y>-16.4</y>
+        <text>Ecosistema de jugadores</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Ecosistema de jugadores</FONT>
+          </P>
+        </htmlText>
+        <w>251.9</w>
+        <h>32.8</h>
+      <url /></textfield>
+    </object>
+    <object class="body" id="4_184204" r="0" s="146.49835205078125" type="label" x="-88869.45" y="-7997.4">
+      <textfield>
+        <x>-36.65</x>
+        <y>-16.4</y>
+        <text>+famaf</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">+famaf</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="invisible" id="1_52935" r="0.005246575650127483" s="89.81637610898011" type="button" x="-88235.95" y="519.75">
+      <type>invisible<url /></type>
+      <size>
+        <w>298</w>
+        <h>266</h>
+      </size>
+    </object>
+    <object class="body" id="3_52935" r="0" s="146.49835205078125" type="label" x="-131186.5" y="-9190">
+      <textfield>
+        <x>-66.6</x>
+        <y>-16.4</y>
+        <text>Conclusiones</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Conclusiones</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="body" id="4_52935" r="0.00524657586053449" s="62.048748276498934" type="label" x="-130681.65" y="-3293.15">
+      <textfield>
+        <x>-136.8</x>
+        <y>-59.6</y>
+        <text>Facultades: incuben
+Emprendedores: emprendan
+
+Volvámonos locos</text>
+        <htmlText>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Facultades: incuben</FONT>
+          </P>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Emprendedores: emprendan</FONT>
+          </P>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24" />
+          </P>
+          <P ALIGN="LEFT">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Volvámonos locos</FONT>
+          </P>
+        </htmlText>
+      <url /></textfield>
+    </object>
+    <object class="invisible" id="5_52935" r="0.005246575650127483" s="120.13361884091188" type="button" x="-130999.85" y="-5206.8">
+      <type>invisible<url /></type>
+      <size>
+        <w>259</w>
+        <h>141</h>
+      </size>
+    </object>
+    <object class="body" id="6_52935" r="0.005246575565378557" s="120.13362171948462" type="label" x="-178884.25" y="11924.05">
+      <textfield>
+        <x>-122.05</x>
+        <y>-45.2</y>
+        <text>Walter Alini
+walini@machinalis.com
+@walteralini</text>
+        <htmlText>
+          <P ALIGN="CENTER">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">Walter Alini</FONT>
+          </P>
+          <P ALIGN="CENTER">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">walini@machinalis.com</FONT>
+          </P>
+          <P ALIGN="CENTER">
+            <FONT COLOR="#888888" FACE="freeserif" KERNING="0" LETTERSPACING="0" SIZE="24">@walteralini</FONT>
+          </P>
+        </htmlText>
+        <w>244.15</w>
+        <h>90.4</h>
+      <url /></textfield>
+    </object>
+    <object class="invisible" id="7_52935" r="0.005246575650127483" s="115.94716519903122" type="button" x="-178547.85" y="11982.05">
+      <type>invisible<url /></type>
+      <size>
+        <w>282</w>
+        <h>110</h>
+      </size>
+    </object>
+    <object class="invisible" id="8_52935" r="0.005246575650127483" s="115.94716519903122" type="button" x="-137022.4" y="25553.25">
+      <type>invisible<url /></type>
+      <size>
+        <w>1441</w>
+        <h>685</h>
+      </size>
+    </object>
+  </zui-table>
+  <path>
+    <o>0_184204</o>
+    <o>7_34132</o>
+    <o>28_34132</o>
+    <o>8_34132</o>
+    <o>10_34132</o>
+    <o>16_184204</o>
+    <o>27_34132</o>
+    <o>26_34132</o>
+    <o>6_184204</o>
+    <o>0_52935</o>
+    <o>1_52935</o>
+    <o>5_52935</o>
+    <o>7_52935</o>
+    <o>5_34132</o>
+  </path>
+  <style type="text/css">
+@font-face
+{
+	src: url('freeserif.swf');
+	fontFamily: strongbody;
+}
+
+@font-face
+{
+	src: url('existence-unicaselight.swf');
+	fontFamily: head;
+}
+
+ZLabel
+{
+	padding: 1.2;
+}
+
+ZLabel.head
+{
+	color: #fff;
+	fontFamily: head;
+}
+
+ZLabel.strong
+{
+	color: #ababab;
+	fontFamily: strongbody;
+}
+
+ZLabel.body
+{
+	color: #888;
+	fontFamily: strongbody;
+}
+
+Background
+{
+	gradStart: 2436386;
+	gradEnd: 2436386;
+}
+
+Grid
+{
+	color: #333;
+}
+
+ZFrame.circle
+{
+	color: #fff;
+	thickness: 10;
+	alpha: 0.3;
+}
+
+ZSmartGroup.circle
+{
+	skinClass: hu.kibu.zui.model.skins.CircleFrameSkin;
+}
+
+CircleFrameSkin
+{
+	borderThickness: -1;
+	thickness: 10;
+	highlightBorderColor: #fff;
+	highlightFillAlpha: 0.4;
+	highlightFillColor: #5aa7cb;
+	alpha: 0.3;
+	color: #fff;
+	highlightBorderAlpha: 0.6;
+}
+
+ZFrame.bracket
+{
+	color: #fff;
+	thickness: 10;
+	alpha: 0.3;
+}
+
+ZSmartGroup.bracket
+{
+	skinClass: hu.kibu.zui.model.skins.BracketFrameSkin;
+}
+
+BracketFrameSkin
+{
+	borderThickness: -1;
+	thickness: 10;
+	highlightBorderColor: #fff;
+	highlightFillAlpha: 0.4;
+	highlightFillColor: #5aa7cb;
+	alpha: 0.3;
+	color: #fff;
+	highlightBorderAlpha: 0.6;
+}
+
+ZFrame.roundrect
+{
+	radius: 10;
+	color: #000;
+	alpha: 1;
+}
+
+ZSmartGroup.roundrect
+{
+	skinClass: hu.kibu.zui.model.skins.RoundRectFrameSkin;
+}
+
+RoundRectFrameSkin
+{
+	borderThickness: -1;
+	highlightBorderColor: #fff;
+	highlightFillAlpha: 0.4;
+	highlightFillColor: #5aa7cb;
+	highlightBorderAlpha: 0.6;
+	radius: 10;
+	color: #fff;
+	alpha: 1;
+}
+
+ZSmartGroup.hidden
+{
+	skinClass: hu.kibu.zui.model.skins.HiddenFrameSkin;
+}
+
+HiddenFrameSkin
+{
+	radius: 40;
+	gradEndAlpha: 0.01;
+	gradEndColor: #fff;
+	highlightFillAlpha: 0.2;
+	highlightFillColor: #5aa7cb;
+	highlightBorderAlpha: 0.6;
+	gradStartColor: #fff;
+	highlightBorderColor: #fff;
+	gradStartAlpha: 0.3;
+}
+
+ZFrame.invisible
+{
+	radius: 5;
+	borderColor: #fff;
+	gradEndColor: #fff;
+	gradStartAlpha: 0.02;
+	gradStartColor: #fff;
+	gradEndAlpha: 0.3;
+	borderAlpha: 0.6;
+}
+
+ZCurveLine
+{
+	thickness: 0;
+	color: #fff;
+	alpha: 0.8;
+}
+
+ZArrow
+{
+	thickness: 4;
+	color: #ccc;
+	alpha: 1;
+}
+
+ZMarker
+{
+	thickness: 20;
+	color: #ff0;
+	alpha: 0.7;
+}
+
+ZPath
+{
+	thickness: 5;
+	color: #78c46f;
+	alpha: 0.8;
+}
+
+ZPath Ball.base
+{
+	fillColor: #ff9;
+	radius: 10;
+	alpha: 0.8;
+}
+
+ZPath Ball.mid
+{
+	fillColor: #ff9;
+	radius: 5;
+	alpha: 0.8;
+}
+
+ZVideo
+{
+	padding: 1.2;
+}
+
+</style>
+  <hash>c93078748f60890de1982acf2df2a647</hash>
+<sync><oid>xmptimjjrn7h</oid><hash>c93078748f60890de1982acf2df2a647</hash></sync><config>YO1P3oJSiENvVfdV4po4xtPEGaJaqsGFrRyy9qlvrIIs8GbEclZmnPZWs2NTovCCXXxN/dky+/A28cTxsyV82D/Og87BjNr9KhtPCe6irrNJ5odjmXDNQEW9n7uNlt2np7i12v6GBsozgLsFW0WzKW91mJLam3VgH0w4yBrKgEiIfMTVMTfebhXgB/YOa4UkiMbWAEGobK/94aYEXQtuXa7i482a0lYmM0ltRSBHvfKksXUh/5YXjR8V5O+Pet4o1llYsDsph++d496goXnORHYlD11coy2rZYRyW3T5/Xlc5KsbJo3/bov5v3cZabNO+1YwxTET8WjkOfrCZhd4GQ==</config></zuiprezi>
