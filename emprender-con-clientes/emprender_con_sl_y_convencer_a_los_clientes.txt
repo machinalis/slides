@@ -1,0 +1,30 @@
+un mercado es un espacio de confluencia de diferentes individuos o grupos de individuos que buscan intercambiar bienes o servicios.
+
+iniciar un negocio implica haber detectado una oportunidad de negocios dentro de este espacio (mercado), que por alguna circustancia estuviera generando posibilidades de negocios rentables.
+
+a la inversa, "entrar por entrar", sin oportunidades, está cerca de ser la definición de suicidio.
+
+no podemos hablar de todas las formas y oportunidades que tenemos de vender servicios de software, nosotros vamos a considerar 3:
+
+ - Tipo de cambio favorable vs. otros mercados, sobre todos los mercados europeos y norteamericanos:
+     En mercados desaprovechados por los mercados cordobeses, al menos
+     En un estudio de la agencia pro cordoba, se rescata que, para las empresas cordobesas de software (todas ellas, tanto de productos como de servicios), los destinos de sus trabajos destinados a exportación, son:
+        - 52% Centroamérica
+        - 32% Sudamérica
+        - 12% Norteamérica
+        - 4% Europa
+Esto significa que sólo el 16% de las exportaciones de las empresas de córdoba van a parar a Europa y Estados Unidos.
+
+ - Los modelos de negocios con SL rentables, ya fueron probados e introducidos como algo normal en la conducta de los consumidores de determinados segmentos. Ya vamos a ver un poco más en detalle cuáles son.
+
+ - Costos hundidos 0: cuesta poco arrancar por las características propias de la industria. No hay una curva demasiado empinada en el comienzo de la actividad. A diferencia de muchas otras industrias que requieren formar un producto o una cadena de producción antes de poder salir al mercado a vender.
+
+--------
+
+ya definimos si conviene o no, quién, qué, a cuánto. falta el cómo: esto hace alusión a la estrategia de ingreso.
+
+En este sentido vemos que existen al menos dos vías de ingresar al mercado, que son totalmente diferentes en cuanto a los canales que se deben usar, en cuanto a las formas de comunicarlo, y mediante a las estrategias que deban utilizarse:
+
+ - A través de los usuarios y desde allí a los tomadores de decisiones: esto es, una vía de ingreso por la difusión o viralidad. Que la difusión haga que los usuarios fuercen, empujen y hasta exijan una toma de decisión en este sentido.
+ 
+ - A través de los tomadores de decisiones y de allí hacia la comunidad específica de usuarios: esto es, una vía de ingreso por los tomadores de decisiones en términos de uso del producto, y a partir de allí a la comunidad de usuarios
