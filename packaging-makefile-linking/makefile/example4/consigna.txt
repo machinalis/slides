@@ -1,0 +1,4 @@
+La consigna es reproducir el script de linking/example5 pero en un makefile.
+Las reglas básicas y las variables ya estan en Makefile a modo de kickstart,
+quedan rellenar algunas reglas e inventar otras.
+

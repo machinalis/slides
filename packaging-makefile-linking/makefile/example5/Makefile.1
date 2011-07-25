@@ -1,0 +1,18 @@
+GCC=gcc
+
+all: astatic
+
+astatic: a.o good.o
+	$(GCC) -o $@ $^
+
+a.o: a.c
+	$(CC) -c $^
+
+good.o: good.c
+	$(CC) -c $^
+
+.PHONY: clean all
+
+clean:
+	rm -f astatic *.o
+

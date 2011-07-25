@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<node name="/org/gnome/ServiceName">
+	<interface name="org.gnome.ServiceName">
+		<annotation name="org.freedesktop.DBus.GLib.CSymbol" value="server"/>
+		<method name="EchoString">
+			<arg type="s" name="original" direction="in" />
+			<arg type="s" name="echo" direction="out" />
+		</method>
+		<!-- Add more methods/signals if you want -->
+	</interface>
+</node>

@@ -1,0 +1,9 @@
+Copiar la metodologia de example3 para el caso de recv:
+-Buscar el prototipo de recv con man o info
+-Completar recv_hook.c con esa informacion
+-Escribir un script sh para que compile y linkee a recv_hook.so
+-Ejecutar una prueba con wget y buscar en /tmp el archivo correspondiente
+
+La llamada a wget que estuve usando yo es esta:
+wget http://cs.famaf.unc.edu.ar/~carrascosa/loremipsum.txt
+
