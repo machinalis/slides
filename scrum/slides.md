@@ -112,6 +112,34 @@ Obvio!
     * Ej: Scrum, XP, Test Driven Development
 
 ----
+# ¿Y si no hacemos nada de gestión?
+
+----
+
+## La “crisis del software”
+
+ * Proyectos pasados en costo.
+ * Proyectos fuera de sus plazos.
+ * Software ineficiente.
+ * Software de poca calidad.
+ * Software que no satisfacía requerimientos.
+ * Proyectos complicados de continuar y mantener.
+ * Software que jamás era entregado.
+
+----
+## Solución: gestión predictiva
+
+ * Basada en otras disciplinas
+    * Con sus propios supuestos
+ * Disciplina formal
+ * Ciclo de planificación/ejecución/seguimiento
+ * Tiene como objetivos cumplimiento de tiempo, costo y requerimientos
+ * Presupone un entorno predecible
+ * Basada en procesos
+    * Repetibilidad, escalabilidad, mejora contínua
+
+----
+
 
 1. Los objetivos de la gestión de proyectos de Software
        * Analisis de la problemática

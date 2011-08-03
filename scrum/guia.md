@@ -177,10 +177,29 @@ acuñaron los términos *crisis del software* e *Ingeniería de Software*.
 ### La primer solución: Modelos predictivos
 
 Ante el chorro de agua fría que resultó ser la crisis del Software, comenzaron
-a buscarse mecanismos de prevenir los problemas que empezaban
+a buscarse mecanismos de prevenir los problemas detectados. Los primeros
+intentos, se basaron en adoptar modelos y prácticas de la ingeniería y gestión
+de proyectos existentes (en ámbitos militares, automotrices).
 
+Los mecanismos de gestión existentes en el momento eran principalmente modelos
+de *gestión predictiva*, donde la gestión es una disciplina formal, basada en 
+planificación seguida de ejecución seguida de seguimiento, usando procesos
+sistemáticos y repetibles.
+
+La gestión predictiva establece como medida de éxito mantenerse en los límites
+de tiempo y coste, obteniendo un producto que satisfaga los requerimientos. En
+base a ese objetivo establece mecanismos para mantener el cronograma,
+presupuesto y recursos. Para ello se basa en una serie de suposiciones de que
+el proyecto se desarrolla en un ámbito predecible y sin cambios, y por lo tanto
+puede seguir una secuencia preestablecida de pasos de concepto, requisitos,
+diseño, planificación, cierre.
+
+Los mecanismos de la gestión predictiva proponen que el trabajo basado en
+procesos garantiza repetibilidad, escalabilidad y mejora continua
 
 ### Contrapropuesta: Modelos ágiles
+
+http://www.lostgarden.com/2007/02/rockets-cars-and-gardens-visualizing.html
 
 ### Nuevo contexto en las organizaciones
 
