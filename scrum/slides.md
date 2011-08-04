@@ -139,7 +139,21 @@ Obvio!
     * Repetibilidad, escalabilidad, mejora contínua
 
 ----
+## Crítica: gestión predictiva
 
+ * ¿Está aplicada en el contexto apropiado?
+ * ¿Sus objetivos y métricas son relevantes?
+ * ¿Existen otros modelos?
+ * ¿Es su valor agregado superior al costo?
+
+----
+## Modelos ágiles
+
+ * Iterativos e incrementales
+ * Equipos autoorganizados
+ * Foco en las personas y el producto, no en el proceso y las tecnología
+ * Basados en la suposición de un entorno cambiante
+ 
 
 1. Los objetivos de la gestión de proyectos de Software
        * Analisis de la problemática

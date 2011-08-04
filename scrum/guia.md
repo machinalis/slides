@@ -197,11 +197,98 @@ diseño, planificación, cierre.
 Los mecanismos de la gestión predictiva proponen que el trabajo basado en
 procesos garantiza repetibilidad, escalabilidad y mejora continua
 
+### Crítica a los modelos predictivos
+
+Durante la década de los 1990, distintos grupos de estudiosos y practicantes
+de la Ingeniería de Software empezaron a cuestionar la efectividad de la
+solución propuesta. Algunos estudios[1] indicaron que solo entre el 15% y el 25%
+de los proyectos de software (dependiendo el año) resultaban "exitosos", y
+entre el 30% y 40% de los proyectos resultaba en fracaso completo.
+
+Entre los '70 y los '90, la explicación usual de por que los modelos fallaban
+era “No estás haciendo o suficiente”. El cambio en los '90 fue que mucha gente
+empezó a preguntarse si no tenían que en vez hacer algo diferente, si la falla
+no era por aplicar técnicas inapropiadas en vez de falta de aplicación de 
+éstas.
+
+Hubo varios a aspectos a cuestionar, desde la forma de medir el éxito, hasta los
+objetivos del proceso y la gestión en sí.
+
+[1] http://spinroot.com/spin/Doc/course/Standish_Survey.htm
+
 ### Contrapropuesta: Modelos ágiles
 
-http://www.lostgarden.com/2007/02/rockets-cars-and-gardens-visualizing.html
+El cuestionamento de los '90s llevo a varios grupos a desarrollar diferentes
+nuevos modelos y prácticas que trataban de evitar los problemas de los modelos
+predictivos. Si bien muchos de estos desarrollos fueron independientes,
+empezaron a notarse muchos aspectos comunes entre estos modelos (como Scrum, XP,
+TDD, etc.)
+
+En febrero de 2001, 17 impulsores de estos nuevos modelos se reunieron para
+aunar esfuerzos y encontrar formas de colaboración en base a los puntos
+comunes. De esa reunión salió el nombre de *metodologías ágiles*, y un documento
+describiendo los principios y valores compartidos entre ellos.
+
+Los modelos proponen formas de trabajo adaptivas y flexibles, y descartan el
+estilo preplanificado y rígido de otras metodologías formales que se estaban
+desarrollando simultáneamente como CMMI e ISO 15504.
 
 ### Nuevo contexto en las organizaciones
+
+(El contenido de esta sección se basa en *Hirotaka Takeuchi y Ikujiro Nonaka: 
+The New New Product Development Game*, <http://www.sao.corvallis.or.us/drupal/files/The%20New%20New%20Product%20Development%20Game.pdf>)
+
+Hasta los '80s la forma típica en que se planteaban los proyectos en una
+organización era una secuencia de pasos, donde las tareas a realizar en cada
+paso eran diferentes:
+
+ * Requerimientos
+ * Diseño
+ * Codificación
+ * QA
+ * Integración
+ * Operación y Mantenimiento
+ 
+En este contexto, cada uno de estos pasos era llevado a cabo por un equipo
+especializado diferente, mientras que la gestión de proyectos se encargaba de
+comunicar y sincronizar cada uno de los departamentos involucrados. Cada
+departamento tenía su propio sistema de procesos.
+
+Durante estudios realizados durante los '80 se observo que este modelo teórico
+muchas veces se desviaba de la práctica real. La diferencia se hacía más
+marcada en aquellos equipos que estaban desarrollando tecnología más novedosa
+y recorriendo espacios inexplorados. En esos casos, tendían a tener más éxito
+aquellas empresas que, en vez de tener distintos departamentos especializados, 
+tenían un equipo interdisciplinario que colaboraba a lo largo de todo el proceso
+de desarrollo de los productos.
+
+Este nuevo escenario es cada vez mas frecuente a medida que los avances
+tecnológicos hacen que los ciclos de obsolescencia de productos sean cada vez
+menores. En este contexto, los productos necesitan:
+
+ * Producir valor lo antes posible en el proceso
+ * Mantenerse activos y en renovación, con cambios y actualizaciones constantes
+ * Adaptarse a cambios en el mercado
+
+Estas circunstancias invalidad muchas de las premisas de los modelos
+predictivos. Los modelos ágiles incorporan como premisa que el cambio es una
+parte intrínseca del desarrollo del producto, y por lo tanto planear más
+allá de donde podemos predecir es una inversión inefectiva de esfuerzos,
+mientras que además indican que no podemos dejar de planificar para poder
+tener los cambios en cuenta.
+
+El objetivo deja de ser cumplir una lista de requerimientos, para poder ser
+cumplir con una visión
+
+En este nuevo entorno en las organizaciones hay varios elementos comunes:
+
+ * Incertidumbre
+ * Auto-organización
+ * Superposición de las fases de desarrollo
+ * Control sútil
+ * Difusión del conocimiento
+
+http://www.lostgarden.com/2007/02/rockets-cars-and-gardens-visualizing.html
 
 ----
 
