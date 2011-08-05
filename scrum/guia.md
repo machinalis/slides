@@ -416,6 +416,8 @@ posibilidad de ajuste hasta que se llega a la meta
 
 ![Modelo predictivo](Iteration-Diagrams-Waterfall1-756439.jpg)
 
+(Imagen © 2007 Daniel Cook)
+
 Al llegar a la meta se hace un lanzamiento, en el cual puede obtenerse
 información de si el producto generado era lo que el cliente o el mercado
 necesitaba. En un mercado donde el ritmo de cambio es mas grande que el tiempo
@@ -424,6 +426,8 @@ llegarse a la meta deseada, a un costo importante. Si todavía queda recursos
 puede intentarse nuevamente
 
 ![Modelo predictivo](Iteration-Diagrams-Waterfall3-715206.jpg)
+
+(Imagen © 2007 Daniel Cook)
 
 En este intento hay más chances de obtener buenos resultados porque el equipo
 tiene mejor información (si bien sigue existiendo el riesgo de que esa
@@ -438,11 +442,15 @@ sino que se van haciendo ligeros ajustes durante el camino
 
 ![Modelo iterativo](Iteration-Diagrams-Agile1-782053.jpg)
 
+(Imagen © 2007 Daniel Cook)
+
 Con este nuevo modelo, reconocemos que podemos equivocarnos, pero a su vez cada
 uno de los errores que cometemos es de menor impacto por el reajuste constante.
 A la larga, obtenemos un camino más eficiente y de menor riesgo.
 
 ![Modelo iterativo](Iteration-Diagrams-Agile3-765636.jpg)
+
+(Imagen © 2007 Daniel Cook)
 
 Para que la re-evaluación pueda hacerse, se generan versiones del producto cada
 periodos cortos de tiempo (típicamente 2 a 4 semanas). La interacción con el
