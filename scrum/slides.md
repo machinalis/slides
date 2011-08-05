@@ -154,16 +154,63 @@ Obvio!
  * Foco en las personas y el producto, no en el proceso y las tecnología
  * Basados en la suposición de un entorno cambiante
  
+----
+# The New New Product Development Game
 
-1. Los objetivos de la gestión de proyectos de Software
-       * Analisis de la problemática
-       * El rol de los modelos, procesos, personas, y tecnología.
-2. Motivacion historica/contectual
-       * Crisis del software
-       * Modelos predictivos vs
-       * Modelos agiles
-       * Nuevos entornos organizacionales
-3. Los principios de la gestion agil
+----
+## Campos de scrum
+
+ * Incertidumbre
+ * Auto-organización
+ * Superposición de las fases de desarrollo
+ * Control sútil
+ * Difusión del conocimiento
+
+----
+## Incertidumbre
+
+ * Visión compartida
+ * Responsabilidad compartida
+ * Autonomía y libertad compartida
+ 
+----
+## Auto-organización
+
+ * No hay roles de gestión
+ * No hay pautas de organización de tareas
+
+El equipo debe tener:
+
+ * Autonomía
+ * Voluntad de superación
+ * Voluntad de enriquecimiento
+
+----
+## Superposición de las fases de desarrollo
+
+ * *Sashimi* o *rugby*
+ * Los involucrados se hacen responsables por el resultado final
+ * Comunicación directa por sobre documentación
+ * Eliminación de cuellos de botella
+
+----
+## Control sutil
+
+ * Fomento de creatividad
+ * Control entre pares
+ * Interacción entre ingenieros y clientes
+ * Tolerancia con errores
+ * Implicación del cilente en el proceso
+ 
+----
+## Transferencia de conocimiento
+
+ * A nivel proyecto
+ * A nivel organización 
+ 
+---- 
+ 
+ 3. Los principios de la gestion agil
 
        * El manifiesto agil
        * Objetivos de la gestion agil
