@@ -1,6 +1,8 @@
 # Gestión de proyectos con Scrum
 
-Daniel F. Moisset - dmoisset@machinalis.com
+# Guía de estudio - Parte I
+
+Daniel F. Moisset - <dmoisset@machinalis.com>
 
 © 2011 Machinalis
 
