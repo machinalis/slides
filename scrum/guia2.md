@@ -36,7 +36,24 @@ Scrum ha sido utilizado con éxito desde los '90s para gestionar el desarrollo
 de productos. En algunos aspectos Scrum no es estrictamente un proceso, sino
 un esqueleto en base al cual se pueden integrar distintas técnicas de
 desarrollo y construcción del producto, y sobre las cual es posible adaptarse
-y mejorar. Esto hace que haya distintas estrategias de aplicación de Scrum
+y mejorar. Esto hace que haya distintas estrategias de aplicación de Scrum.
+
+
+> Cuando no existen reglas
+> establecidas, se espera de los
+> usuarios de Scrum que
+> deduzcan qué hacer. No trate
+> de encontrar una solución
+> perfecta, porque el problema
+> por lo general cambia
+> rápidamente. En su lugar,
+> pruebe algo y vea cómo
+> funciona. Los mecanismos de
+> inspección y adaptación de la
+> naturaleza empírica de Scrum
+> le guiarán
+> 
+> Ken Schwabber and Jeff Sutherland, The Scrum Guide 2010
 
 ### Introducción
 
@@ -125,7 +142,11 @@ valores:
 
 Scrum define un “Equipo”, donde hay algunos roles funcionales diferentes. El
 equipo esta compuesto por aquellas personas que están *comprometidas*, y
-mantiene afuera a aquellas que sólo están *implicadas*.
+mantiene afuera a aquellas que sólo están *implicadas*. El equipo es:
+
+ * Auto-organizado: nadie de afuera el equipo le dicta como realizar su trabajo.
+ * Multi-disciplinario: todo el trabajo a realizar puede ser alcanzado por los
+   miembros del equipo.
 
 El **Propietario del Producto** (o *Product Owner* en inglés) es el encargado
 de maximizar el valor del producto para el trabajo realizado. Hay distintas
@@ -242,7 +263,7 @@ Pueden también asistir otras personas que el equipo considere pertinente por
 tener información u opiniones valiosas para el objetivo de la reunión.
 
 Esta reunión dura típicamente entre 4 y 8 horas (usualmente proporcional a la
-longitud del sprint.
+longitud del sprint).
 
 El objetivo de la reunión es decidir cuales requerimientos serán desarrollados
 durante el sprint, y que trabajo se realizará para lograr el objetivo. Para
@@ -429,7 +450,8 @@ En resumen, la pila de producto es un refinamiento de la visión, separado en
 items definidos y priorizados.
 
 Cada uno de estos items puede ser cualquier cambio al incremento: agregar o
-quitar funcionalidad, mejorar performance, mejorar costo de producción, etc.
+quitar funcionalidad, mejorar performance, mejorar costo de producción, 
+corregir errores, etc.
 
 Antes del inicio del proyecto, debe haber una pila de producto, con trabajo
 suficiente para al menos un sprint.
@@ -500,4 +522,17 @@ si el trabajo fue completado:
 
 ![Burn-down al fin del sprint](burndown-final.png)
 
+La **definición de “Completo”** (*definition of Done* en inglés) es un documento
+vivo en el cual se acuerda entre todo el equipo los estándares de calidad y
+procesos propios del equipo. Esto es importante para que haya un acuerdo de lo
+que significa cuando un miembro del equipo indica que un item de la cola o 
+un incremento están “completos”. 
 
+Si bien esta definición puede alterarse en cualquier momento, la retrospectiva
+suele ser un momento ideal para hacerlo. Además hacerlo a mitad de un sprint
+puede significar una modificación al trabajo para hacer, con lo cual muchas
+veces se toma nota de la modificación pero se hace efectiva al sprint
+siguiente.
+
+Idealmente, esta definición establece reglas bien claras de si algo está o no
+completo.
