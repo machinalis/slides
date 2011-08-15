@@ -29,8 +29,8 @@ conjunto de prácticas, las presentaron en 1996 en OOPSLA como un nuevo método
 de construcción de software.
 
 Cinco años más tarde, ambos serían dos de los 17 participantes de la reunión
-que culmino en el manifiesto ágil, y que definió a Scrum como uno de los
-procesos que encuadraban bajo la bandera de los métodos ágil.
+que culminó en el manifiesto ágil, y que definió a Scrum como uno de los
+procesos que encuadraban bajo la bandera de los métodos ágiles.
 
 Scrum ha sido utilizado con éxito desde los '90s para gestionar el desarrollo
 de productos. En algunos aspectos Scrum no es estrictamente un proceso, sino
@@ -227,7 +227,7 @@ Algunas tares que el Scrum Master puede realizar es:
 
 ![Ciclos en Scrum](500px-Scrum_process.svg.png)
 
-Imagen © Lakeworks, ver licencia en http://en.wikipedia.org/wiki/File:Scrum_process.svg
+Imagen © Lakeworks, ver licencia en <http://en.wikipedia.org/wiki/File:Scrum_process.svg>
 
 El ciclo principal del Scrum es el *Sprint*, un período de tiempo prefijado 
 (*timebox*, es decir su duración solo depende del tiempo calendario) de un mes
@@ -483,7 +483,7 @@ formato que se elija (físico o digital) debe cumplir lo siguiente:
  
 Hay equipos que implementan esto con un pizarrón en el lugar de trabajo, una
 hoja de cálculo compartida, o alguna herramienta específica para gestión
-de proyectos Scrum. E responsabilidad del Scrum Master encontrar el medio que
+de proyectos Scrum. Es responsabilidad del Scrum Master encontrar el medio que
 se adapte mejor a las circunstancias del equipo.
 
 La pila del sprint se mantiene al día por lo menos a diario, durante la
