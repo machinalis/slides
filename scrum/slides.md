@@ -23,7 +23,7 @@
 
 ----
 
-## “Gestión de proyectos de Software”
+## “Gestión de proyectos (software)”
 
 Obvio!
 
@@ -186,7 +186,7 @@ El equipo debe tener:
  * Voluntad de enriquecimiento
 
 ----
-## Superposición de las fases de desarrollo
+## Superposición de las fases
 
  * *Sashimi* o *rugby*
  * Los involucrados se hacen responsables por el resultado final
@@ -209,10 +209,132 @@ El equipo debe tener:
  * A nivel organización 
  
 ---- 
- 
- 3. Los principios de la gestion agil
 
-       * El manifiesto agil
-       * Objetivos de la gestion agil
-       * Modelos de trabajo ciclico
-       * Condiciones de aplicabilidad de modelos agiles vs predictivos
+# Modelos ágiles
+
+----
+## El manifiesto ágil
+
+ * Personas > Procesos
+ * Software > Documentación
+ * Colaboración > Contrato
+ * Adaptabilidad > Precisión
+ 
+----
+## Personas > Procesos
+
+ * El software es un área de conocimiento tácito
+ * El talento no es sustituible por procesos
+ * Los procesos tienen su lugar
+ 
+----
+## Software > Documentación 
+
+ * La documentación interna es un auxiliar
+ * No garantiza calidad
+    * Solo se hace la que sirve
+ * Al escribir documentación:
+    * ¿Cómo se mantiene?
+    * ¿Cuando se usa?
+    * Se puede transmitir la misma información de modo más eficiente?
+
+----
+## Colaboración > Contrato
+
+ * Contrato implica:
+    * Prenegociar
+    * Un momento de comunicación alcanza
+ * Colaboración implica:
+    * Comunicación continua
+    * Involucramiento en el proyecto
+
+----
+## Adaptabilidad > Precisión
+
+ * El cambio no es “mala suerte”
+    * *Embrace change*
+    * La variabilidad del contexto se presupone
+    * Planear en base al cambio
+ * Seguimiento de un plan no sirve si el contexto cambia
+    * No quiere decir que no haya planes
+    * El plazo del plan debe ajustarse a la variabilidad del contexto
+
+----
+## Objetivos ágiles:
+
+ * Producir incrementos de valor
+ * Minimizar tiempo de salida al mercado
+ * Responder al cambio
+
+----
+## Respondiendo al cambio
+
+ * Necesitamos recolectar permanentemente conocimiento
+    * Para garantizar valor
+ * El conocimiento inicial es bajo
+ * La forma de recolectar conocimiento es haciendo y revisando
+ 
+----
+## Modelo predictivo 
+
+ * Se supone el conocimiento inicial. Se fija la meta y se lanza un cohete.
+ 
+<img src="waterfall1.png">
+
+ * Si las cosas cambian, nos enteramos al llegar
+ 
+----
+
+## Modelo predictivo 
+
+ * Si quedan recursos, se puede reintentar.
+ 
+<img src="waterfall2.png">
+
+----
+## Modelo iterativo
+
+ * Se avanza hasta un incremento
+ 
+<img src="iterative1.png">
+
+ * *Dado que las cosas cambian*, medimos y ajustamos
+ 
+----
+
+## Modelo iterativo 
+
+ * Como esta planeado, reintentamos
+ 
+<img src="iterative2.png">
+
+ * El esfuerzo total es menor
+ 
+----
+## Ciclos
+
+ * Visión compartida
+    * Se planean metas para el ciclo
+ * Se produce un incremento
+    * Se integra
+ * Se evalúa contra las metas (*Inspect*)
+ * Se ajusta el plan y proceso (*Adapt*)
+ 
+----
+# Cuando aplicar?
+
+Aspectos del proyecto:
+
+ * Objetivo
+ * Variabilidad
+ * Costo de prototipado
+ * Criticidad
+ * Tamaño
+ 
+----
+# Cuando aplicar?
+
+Aspectos de la organización:
+
+ * Seniority
+ * Cultura
