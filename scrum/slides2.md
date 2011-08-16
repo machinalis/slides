@@ -281,25 +281,129 @@ En alguna bibliografía, también se le dice *stand-up meeting*
 ----
 ## Revisión del sprint
 
+ * Participa el equipo entero
+    * Pueden asistir otros, pero NO guíar la reunión
+ * Al final del sprint
+ * De 2 a 4 horas
+ * Objetivo: presentar incremento del proyecto y obtener información de retorno
+
+----
+## Revisión del sprint: Desarrollo
+
+ * Es informal
+ * La guía el equipo de desarrollo
+ * El propietario y otros involucrados comentan sin interrumpir
+ * Se muestra el incremento. No diagramas, documentos, o slides
+ * Se actualiza la cola de producto
+
+----
+## Revisión del sprint: Output
+
+ * Identificación por parte del Propietario del producto de cuales requerimientos están completos y cuales no
+ * Respuestas del equipo de desarrollo sobre el Incremento a los involucrados
+ * Identificación de cambios futuros y actualización de pila del producto
+ 
 ----
 ## Retrospectiva
+
+ * Participa el equipo
+ * Al final del sprint
+ * De 45 a 90 minutos
+ * Objetivo: detectar mejoras del proceso y ajustarlo
+
+----
+## Retrospectiva: Desarrollo
+
+ * En modalidad abierta se discute:
+    * Qué aspectos funcionaron bien y se deberían repetir
+    * Qué problemas se encontraron y si sus soluciones fueron satisfactorias
+    * Qué se debería modificar o añadir al proceso
+ * Luego se determinan acciones para realizar
+
+El Scrum Master tiene un rol central en coordinar el proceso, y asegurar que
+luego se lleve a cabo.
+
+----
+## Retrospectiva: Output
+
+ * Lineas de accion para mejora del equipo
+    * Acciones concretas, con responsabilidad asignada
+ * Modificaciones a la definición de “Completo”
 
 ----
 ## Elementos
 
+ * El incremento
+ * La Pila de Producto
+ * La Pila del Sprint
+ * El gráfico de burn-down
+ * la definición de “completo”
+
 ----
 ## El incremento
+
+ * Tiene valor por si mismo
+ * Solo partes “completas”
+
+A veces es posible que la primera iteración no prodzca incrementos
 
 ----
 ## La pila de producto
 
+ * Colección de requerimientos
+ * Administrada y ordenada por el propietario del producto
+    * Refinada por el equipo de desarrollo
+ * Formato no estandarizado
+    * Debe tener items independientes
+ * Actualización permanente (crítico al momento de inicio de sprint)
+
+Es una versión organizada en requerimientos de la visión
+
 ----
 ## La pila del sprint
+
+ * Colección de requerimientos para el sprint
+    * negociada entre el equipo de desarrollo y el propietario
+    * dividida en tareas pequeñas, estimadas (por el equipo de desarrollo)
+    * siempre decreciente
+ * Formato no estandarizado
+    * Debe ser visible y modificable
+    * En un lugar prominente
+    * Sólo información esencial 
+ * Actualizada a diario por el equipo de desarrollo
 
 ----
 ## El gráfico de burn-down
 
+Trabajo restante vs tiempo:
+
+![Burndown](burndown-empty.png)
+
+ * Actualizado a diario
+ * A la vista
+
+----
+## El gráfico de burn-down
+
+ * Refleja información de la cola de Sprint
+ * Tiene una linea de base
+
+![Burndown](burndown-partial.png)
+
+
+----
+## El gráfico de burn-down
+
+![Burndown](burndown-final.png)
+
+ * Permite comprobar y reajustar a diario el trabajo estimado
+
 ----
 ## La definición de “Completo”
 
+ * Escrito entre todo el equipo
+    * Equipo de desarrollo y product owner.
+ * Actualizado en base a aprendizaje
+ * Estándares de calidad
+ * Útil como medida para inspección durante la revisión y como guía del trabajo
 
