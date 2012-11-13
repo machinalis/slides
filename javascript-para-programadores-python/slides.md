@@ -689,8 +689,16 @@ revisá si `obj.__proto__` esta en la cadena de prototipos de `C`
 * Wikipedia, <http://en.wikipedia.org/wiki/ECMAScript>
 
 
+
+
 ----
 *** asignacion multiple funciona con objetos! cool!
 *** no super
 *** call+apply
 *** arguments
+
+http://javascript.info/tutorial/constructor
+http://tobyho.com/2009/05/23/prototype-inheritence-in/
+https://github.com/airportyh/misc/tree/86d360ef5b449f4d2ceb795fbf6015341a82d491/prototype.py
+https://github.com/airportyh/misc/blob/86d360ef5b449f4d2ceb795fbf6015341a82d491/prototype.py/prototype.py
+
