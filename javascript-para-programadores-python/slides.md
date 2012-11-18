@@ -105,6 +105,7 @@ Pero no le vamos a dedicar mucho tiempo:
 * generator expressions (1.8)
     * Tomados de Python!
 * "function closures" (estilo `lambda`)
+* `super`
 
 ----
 # Para extrañar
@@ -213,9 +214,7 @@ La usan algunas funciones, implícitamente el “`+`”:
 ----
 # Coerciones, coerciones
 
-## Contextos numéricos:
-
-Se usa implícitamente en muchos lados: 
+## Contextos numéricos - implícitamente en muchos lados: 
 
 * operadores aritméticos (`+` y `-` unario, `*`, `%`, ...)
 * Comparaciones: `<`, `>`, `==`
@@ -229,7 +228,7 @@ Se usa implícitamente en muchos lados:
 
     !js
     console.log(['xy'] == 'xy')
-    console.log([] == '')
+    console.log([] == 0)
     console.log([0] == 0)
 
 ----
@@ -243,7 +242,7 @@ Se usa implícitamente en muchos lados:
     1. `null` == `undefined`
     2. Para número == string, se convierte todo a número
     3. Para booleano == X, se convierte el booleano a número
-    4. Para número/string == objeto, se convierte el objeto a número
+    4. Para número/string == objeto, se convierte el objeto a valor
 * El operador `===` es más estricto
 
 ----
@@ -559,8 +558,8 @@ Por lo tanto *obj*`[`*key*`](`*args*`)` es una llamada a método, con *obj* haci
             return (this.balance < 0);
         }
     }
-    c1 = Cuenta({}, 10)
-    c2 = Cuenta({}, 20)
+    c1 = {}; Cuenta(c1, 10)
+    c2 = {}; Cuenta(c2, 20)
     c1.depositar(20);
     if (c2.enRojo())
 
@@ -612,7 +611,7 @@ Mejora un poco. Todavía tenemos algunos problemas:
 * Ahora las funciones están en un solo lugar
 
 ----
-# Comparación: creación de objetos
+# Comparación: creación
 
 Python:
 
@@ -626,7 +625,7 @@ Python:
 5. Liga `obj` a *o*
 
 ----
-# Comparación: creación de objetos
+# Comparación: creación
 
 Javascript:
 
@@ -678,6 +677,21 @@ Revisa si `obj.__class__` está en `C.__mro__`
 revisá si `obj.__proto__` esta en la cadena de prototipos de `C`
 
 ----
+# Prototipos en Python?
+
+## Sí!
+
+* <http://tobyho.com/2009/05/23/prototype-inheritence-in/>
+* <https://github.com/airportyh/misc/tree/86d360ef5b449f4d2ceb795fbf6015341a82d491/prototype.py>
+
+----
+# Repasando
+
+* Son similares a nivel datos
+* Muchos features están “convergiendo”
+* algunos aspectos a nivel filosofía son distintos
+
+----
 # Bibliografía
 
 * Mozilla Developer Network, <https://developer.mozilla.org/en-US/docs/JavaScript/Reference>
@@ -687,18 +701,13 @@ revisá si `obj.__proto__` esta en la cadena de prototipos de `C`
 * <http://saladwithsteve.com/2008/02/javascript-undefined-vs-null.html>
 * Wikipedia, <http://en.wikipedia.org/wiki/Javascript>
 * Wikipedia, <http://en.wikipedia.org/wiki/ECMAScript>
-
-
-
+* <http://javascript.info/tutorial/constructor>
 
 ----
-*** asignacion multiple funciona con objetos! cool!
-*** no super
-*** call+apply
-*** arguments
+# Preguntas
 
-http://javascript.info/tutorial/constructor
-http://tobyho.com/2009/05/23/prototype-inheritence-in/
-https://github.com/airportyh/misc/tree/86d360ef5b449f4d2ceb795fbf6015341a82d491/prototype.py
-https://github.com/airportyh/misc/blob/86d360ef5b449f4d2ceb795fbf6015341a82d491/prototype.py/prototype.py
+## dmoisset@machinalis.com
+## @dmoisset
+## <https://github.com/machinalis/slides>
+
 
