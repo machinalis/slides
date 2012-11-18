@@ -283,8 +283,9 @@ aside {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
-  div.slide p.notes {
+div.slide p.notes {
     font-size: 90%;
+    color: #444;
 }
 
 /* Pygments default theme */
