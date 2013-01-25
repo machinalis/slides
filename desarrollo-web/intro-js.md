@@ -39,10 +39,10 @@ Aunque suele ser más práctico
 ----
 # Tipos predefinidos
 
-* `number`, `boolean`, `string`
-* Los valores `null` y `undefined`
-* arreglos
+* `number`, `boolean`, `string` y `undefined`
 * objetos (Similares a diccionarios)
+* arreglos
+* Los valores `null` 
 
 ----
 # Quirks de sintáxis
@@ -85,7 +85,7 @@ Lo básico
 
 Estilo C/C++:
 
-!js
+    !js
     var x; // Un comentario
     var y; /* Otro comentario
     que sigue abajo */
@@ -122,6 +122,12 @@ Los mas o menos clásicos:
 * `if`, `while`/`break`/`continue`
 * `for` y `do`...`while` estilo C
 
+Hay manejo de excepciones:
+
+* `throw`
+* `try`...`catch`...`finally`
+* cualquier valor es una excepción
+
 ----
 # Funciones
 
@@ -156,7 +162,8 @@ Comparar con
 * `{}` es un objeto vacío
 * se pueden acceder con `["key"]` o `.key`
 * una clave desconocida se liga a `undefined`
-* Iterable sobre claves
+
+Se puede iterar sobre claves
 
     !js
     obj = {ancho: 100, alto: 200};
