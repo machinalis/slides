@@ -43,6 +43,8 @@ Se porta como un diccionario, pero persiste entre requests. Tiene además:
 
 A veces no es ideal (¿cuándo?). Pensar en el caso "muchos tabs"
 
+* `./manage.py cleanup`
+
 ----
 # Construyendo URLs
 
