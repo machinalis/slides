@@ -1,0 +1,58 @@
+My name is Daniel and I work as a web developer at Machinalis, were I
+work building web applications. Many of our applications solve problems related
+to machine learning so I collaborate with data scientists where they work on the
+analysis and algorithms, and I work building the application that glues it with
+other systems and the users.
+
+When I started doing this I discovered that ML applications have some elements
+that were really new to me from a software engineering standpoint. My goal for
+this talk is to make you aware of the problems and if I have time give you one
+or two pointers to possible solutions. A full discussion would of course take
+quite more than just a lightning talk.
+
+When I work in other applications doing TDD or BDD, I can specify the system
+through acceptance tests that say "when this events happens, or when I do X, the
+system should provide this result". This kind of specifications is not very
+useful in ML problems.
+
+First, the inputs to the systems are large and complex by nature, so defining
+the "input" for the test case is probably quite large. The inputs for the
+Netflix recommender consists not just on the movies a user likes , but also the
+whole set of preferences of all users at the same time, and it's not easy to
+create a "simple example" useful or relevant for a test. 
+
+Another problem is that results are not exact or predictable, which is something
+that drives us engineers crazy! For example, a kitten detection system may be
+accurate 95%, or 97% of the time, but it may fail some times. There are even
+worst situations, where one can not be even sure what's the right answer. I
+already mentioned the netflix recommender. So what is the correct answer for
+this question?
+
+It is possible to test the algorithm for an exact result for a fixed training
+dataset and inputs, but if you say that "this is the correct answer", does it
+actually add business value? what if I change the algorithm? what if the
+training data updates with time?
+
+As you can see, testing in this context is quite different to testing other
+kinds of applications. There are some useful things that you can do.
+
+For inputs, you typically feed data from several external systems or sources, so
+you should add tests to the "input" code of your ML algorithms to make sure they
+behave reasonably when fed invalid, corrupt or incomplete data. This is
+important because unless you control the full data flow, most data sources are
+very noisy. You can unit test that, although those tests are boring; we have had
+good success using a tool that generates "random" tests cases and checks that
+your feature extraction does not crash.
+
+To test outputs, there isn't much choice but to have large datasets for tests.
+You should have a test data set that has not been fed to the algorithm, because
+that's cheating. If your problem has "correct" answers, you can check that your
+system gives a correct answer not always, but statistically more often than a
+given "baseline". Choosing a good baseline (not too easy but not too hard) is
+something that a data scientist can help you choose based on statistical
+properties of your data. Also "accuracy" is not always the best metric, and in
+some cases some other measurements may be more relevant.
+
+This is all I have time for, but I'd love to hear more about your experiencies
+or thoughts, so be welcome to get in touch! Thanks!
+
